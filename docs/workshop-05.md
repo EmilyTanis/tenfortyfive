@@ -1,6 +1,6 @@
 # Workshop 05: website strategy & customer experience
 
-In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md), [`brand/messaging.md`](../brand/messaging.md) and the draft [`website/copy-brief.md`](../website/copy-brief.md).
+Completed November 25, 2026. Builds on [Workshop 04](workshop-04.md), [`brand/messaging.md`](../brand/messaging.md) and the draft [`website/copy-brief.md`](../website/copy-brief.md).
 
 | # | Decision | Status |
 |---|---|---|
@@ -13,7 +13,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 07 | Onboarding after payment | Approved |
 | 08 | Portfolio at launch | Approved |
 | 09 | Platform and hosting | Approved |
-| 10 | Soft-launch scope | Open |
+| 10 | Soft-launch scope | Approved |
 
 ## 01: Website's main job (approved)
 
@@ -165,3 +165,44 @@ Timeline impact: the landscaping site must be built in December to appear by the
 Why Stripe for both rather than a merchant-of-record service: one account, dashboard and payout; lower fees (about 2.9% + 30¢ plus 0.5% tax vs about 5% + 50¢); New Jersey registration is likely needed anyway as an NJ business. Other states' thresholds (commonly $100k or 200 sales a year) are unlikely to apply at launch volumes.
 
 **Before anything goes on sale, ask the accountant:** (1) are the guides/templates taxable "specified digital products" in NJ (6.625%)? (2) are project fees taxable services? (3) registration and filing frequency.
+
+## 10: Soft-launch scope and timeline (approved)
+
+**Expedited.** Founders will put in more hours at the start (Emily ~20–25 h/week). do it yourself. products go on sale **at the soft launch**. Target soft launch: **December 15**; public launch stays **January 5, 2027**.
+
+### Set up correctly and legally first
+
+Do not run client money through a personal bank account. Form the business this week instead (to be confirmed with an attorney and accountant; this is a checklist, not legal advice):
+
+1. File an NJ LLC online (~$125, already budgeted).
+2. Get an EIN from the IRS (online, same day, free).
+3. Open a business bank account.
+4. Register for NJ sales tax.
+5. Set up Stripe in the business's name.
+
+Pre-formation expenses (e.g. the domain) may be paid personally and recorded as founder contributions. Founder doc 04 already requires separate funds.
+
+Professional help to book this week:
+- **Attorney:** founder agreement (ownership, IP, roles, exit), client project contract template, Privacy and Terms.
+- **Accountant:** decision 09 tax questions; how a two-member LLC is taxed.
+- **Both founders:** confirm employer policies on side businesses and IP.
+
+### Timeline
+
+| Week | Emily | Angelo | Together / outside help |
+|---|---|---|---|
+| Nov 25 – Dec 1 | Outline the 3 products; start building the website | Research and outreach drafts | File LLC, EIN, buy domain; book attorney and accountant; Dec 1 review |
+| Dec 2–8 | Finish the website; write product 1 | HubSpot, booking, business email | Bank account → Stripe → NJ sales tax; attorney drafts contract, Privacy, Terms |
+| Dec 9–14 | Write and design products 2–3; onboarding templates | Test the whole flow incl. a test purchase | Approve contract and legal pages; landscaping kickoff |
+| **Dec 15 soft launch** | Site live with products on sale | Outreach starts | |
+| Dec 15 – Jan 4 | Landscaping build and handoff; ad creative from the products | Follow-ups; one booked meeting a week | |
+| **Jan 5 public launch** | Ads live; landscaping project as Recent work | | |
+
+**Must be live at soft launch:** LLC, bank, Stripe and NJ sales tax registration; domain and business email; five pages plus Privacy and Terms; booking, project start form, HubSpot; three products on sale; onboarding templates; signed-off client contract; outreach approved by both founders.
+
+**If time runs short:** move the landscaping "Recent work" past January 5 first. Products and legal setup do not slip. The pace is set by attorney, accountant and bank turnaround more than founder hours.
+
+## Follow-ups from this workshop
+
+- Update `brand/messaging.md` and `website/copy-brief.md`: package definitions (04), "tell us, then pay" (05), client-chosen check-ins (07), CTAs and sitemap (01–02).
+- Add this record to the ten forty five Google Drive folder.
