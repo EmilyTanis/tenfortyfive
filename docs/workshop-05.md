@@ -9,7 +9,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 03 | Homepage structure | Approved |
 | 04 | Pricing page | Approved |
 | 05 | Buying get started. / think bigger. | Approved |
-| 06 | do it yourself. purchase and delivery | Open |
+| 06 | do it yourself. purchase and delivery | Approved |
 | 07 | Onboarding after payment | Open |
 | 08 | Portfolio at launch | Open |
 | 09 | Platform and hosting | Open |
@@ -108,3 +108,17 @@ Packages are defined by **the size of the goal and how deep we go**, not by a li
 The free-call path ends the same way: after the call, the same email with confirmed scope, timeline and payment link. One process for both.
 
 **Changes an earlier decision:** Workshops 02 and 04 approved "direct checkout" for fixed packages. This replaces it with "tell us, then pay", because package deliverables are now agreed with the client up front and paying first would mean refunds when a project doesn't fit. Update `brand/messaging.md` and `website/copy-brief.md` to match.
+
+## 06: do it yourself. purchase and delivery (approved)
+
+No scope to confirm, so **instant checkout**.
+
+1. **Format: guide plus usable templates.** Each product is a branded plain-language PDF guide plus 2–4 ready-to-use templates (Google Docs/Sheets or Canva links the buyer copies into their own account).
+2. **Checkout:** Buy → pay → immediate download page, plus an email with the link. Only email and payment details are asked for.
+3. **Apple Pay and Google Pay are required** at checkout; most early traffic is on phones from social and LinkedIn. Express (one-tap) Apple Pay on our own domain needs domain verification, so it depends on buying the domain.
+4. **Sales tax:** prefer a checkout service that acts as merchant of record (e.g. Paddle, Lemon Squeezy, Gumroad) and collects and remits sales tax; New Jersey generally taxes digital products. Confirm the tax treatment with an accountant. Service chosen in decision 09.
+5. **Email updates:** an unticked "Send me occasional tips and updates" box at checkout. Never pre-ticked, never required.
+6. **Refunds:** "If it's not useful, email us within 14 days for a full refund."
+7. **Next step inside each product:** a link to start a get started. project. No discount or upgrade credit (consistent with Workshop 02).
+
+Later: a free mini version (e.g. a one-page checklist) for ads and lead generation, decided when the products are built.
