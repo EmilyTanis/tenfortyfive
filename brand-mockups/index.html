@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ten Forty Five Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400;500&family=Schibsted+Grotesk:wght@700&family=Instrument+Serif:ital@0;1&family=Geist:wght@500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#142C3B;--muted:#52788F;--line:#DDE6EC;--bg:#FFFFFF;--panel:#F3F6F8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{padding:56px 0 48px;border-bottom:1px solid var(--line)}
+header h1{font-family:"Inter Tight";font-weight:600;font-size:56px;letter-spacing:-.04em;line-height:1;margin:16px 0}
+header p{max-width:62ch;color:#3e5a6b}
+.dirs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:48px 0}
+a.dir{display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--line);transition:border-color .2s,transform .2s}
+a.dir:hover{border-color:var(--muted);transform:translateY(-2px)}
+.sw{height:220px;display:flex;align-items:center;justify-content:center;padding:24px;font-size:34px;color:#fff;text-align:center;line-height:1}
+.info{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.info h2{font-family:"Inter Tight";font-weight:600;font-size:24px;letter-spacing:-.03em}
+.info p{font-size:14px;color:#3e5a6b}
+.chips{display:flex;margin-top:auto;padding-top:12px}
+.chips i{flex:1;height:18px}
+.go{font-weight:500;font-size:14px;margin-top:12px}
+.rec{background:var(--panel);padding:32px;margin-bottom:64px;display:grid;grid-template-columns:200px 1fr;gap:24px}
+.rec p{max-width:70ch}
+table{width:100%;border-collapse:collapse;margin-bottom:64px;font-size:14px}
+th,td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500}
+@media (max-width:900px){.wrap{padding:0 16px}.dirs,.rec{grid-template-columns:1fr}header h1{font-size:38px}.tbl{overflow-x:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="mono">ten forty five · Brand identity exploration · November 2026</span>
+  <h1>Three creative directions</h1>
+  <p>Each board answers the master brief with all fifteen deliverables: wordmark, secondary and compact marks, light and dark versions, colour, type, graphic elements, art direction, business cards, Instagram, LinkedIn, ads, proposal and workbook covers, a website hero and usage guidelines. The palettes are exploratory and not yet approved.</p>
+</div></header>
+
+<main class="wrap">
+  <div class="dirs">
+    <a class="dir" href="a-modern-consultancy.html">
+      <div class="sw" style="background:#142C3B;font-family:'Inter Tight';font-weight:600;letter-spacing:-.045em">ten forty five<span style="display:inline-block;width:6px;height:6px;background:#A9BDC9;margin-left:2px"></span></div>
+      <div class="info"><span class="mono">Direction A</span><h2>The Modern Consultancy</h2><p>Swiss-rooted, grid-led, typography as hero. Alignment rules and progress bars. The most credible of the three, and it scales easily to sophisticated clients.</p>
+        <div class="chips"><i style="background:#142C3B"></i><i style="background:#52788F"></i><i style="background:#A9BDC9"></i><i style="background:#EDF2F5"></i><i style="background:#fff;outline:1px solid #DDE6EC;outline-offset:-1px"></i></div><span class="go">Open board →</span></div>
+    </a>
+    <a class="dir" href="b-editorial-intelligence.html">
+      <div class="sw" style="background:#F5F5F2;color:#263B49;font-family:'Schibsted Grotesk';font-weight:700;letter-spacing:-.055em">ten&nbsp;<span style="font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.02em">forty</span>&nbsp;five</div>
+      <div class="info"><span class="mono">Direction B</span><h2>Editorial Intelligence</h2><p>Oversized headlines, a grotesk + serif-italic voice, footnotes and pull quotes. The most distinctive in social feeds, and it carries the brand's wit.</p>
+        <div class="chips"><i style="background:#263B49"></i><i style="background:#6B899E"></i><i style="background:#BFCED7"></i><i style="background:#F5F5F2"></i><i style="background:#fff;outline:1px solid #DDE6EC;outline-offset:-1px"></i></div><span class="go">Open board →</span></div>
+    </a>
+    <a class="dir" href="c-structured-systems.html">
+      <div class="sw" style="background:#182D3D;font-family:Geist;font-weight:500;letter-spacing:-.05em;gap:12px"><svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#46758E"/><g stroke="#fff" stroke-width="9" stroke-linecap="square"><line x1="50" y1="50" x2="18" y2="50"/><line x1="50" y1="50" x2="37" y2="33"/></g></svg>ten forty five</div>
+      <div class="info"><span class="mono">Direction C</span><h2>Structured Systems</h2><p>A modular grid, a 45° diagonal and a compact mark of clock hands set to 10:45. It says automation and efficiency without looking like a SaaS company.</p>
+        <div class="chips"><i style="background:#182D3D"></i><i style="background:#46758E"></i><i style="background:#8BAABB"></i><i style="background:#DDE8ED"></i><i style="background:#fff;outline:1px solid #DDE6EC;outline-offset:-1px"></i></div><span class="go">Open board →</span></div>
+    </a>
+  </div>
+
+  <div class="tbl"><table>
+    <thead><tr><th class="mono">At a glance</th><th>A · Modern Consultancy</th><th>B · Editorial Intelligence</th><th>C · Structured Systems</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">Typography</td><td>Inter Tight · Inter · IBM Plex Mono</td><td>Schibsted Grotesk · Instrument Serif Italic</td><td>Geist · Geist Mono</td></tr>
+      <tr><td class="mono">Compact mark</td><td>"t" over a 72% progress bar</td><td>"10:45" timestamp stamp</td><td>Square clock hands at 10:45</td></tr>
+      <tr><td class="mono">Signature device</td><td>Column rules, progress bars, ticks</td><td>Pull quotes, footnotes, folios</td><td>Modules resolving into order, 45° line</td></tr>
+      <tr><td class="mono">Strongest at</td><td>Proposals, website, credibility</td><td>Social, ads, thought leadership</td><td>Educational content, digital products</td></tr>
+      <tr><td class="mono">Risk</td><td>Could feel too reserved for the small-business audience</td><td>Needs disciplined copy to avoid feeling like a lifestyle title</td><td>Could tip toward "tech company" if over-applied</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="rec">
+    <span class="mono">Recommendation</span>
+    <p>Following the brief's starting preference, lead with <b>A · The Modern Consultancy</b> as the core system (wordmark, grid and palette) and borrow <b>B's</b> serif-italic moments and statement-led social templates to add personality. <b>C's</b> 10:45 clock mark and "resolve" device are worth keeping in reserve for the automation service line and digital products.</p>
+  </div>
+</main>
+</body>
+</html>

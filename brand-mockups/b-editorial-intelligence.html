@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editorial Intelligence Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#263B49; --steel:#6B899E; --haze:#BFCED7; --paper:#F5F5F2; --white:#FFFFFF;
+  --sans:"Schibsted Grotesk",system-ui,sans-serif; --serif:"Instrument Serif",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1320px;margin:0 auto;padding:0 48px}
+.k{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.s{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--sans);font-weight:700;letter-spacing:-.04em;line-height:.95}
+p{max-width:58ch}
+
+/* wordmark */
+.wm{font-family:var(--sans);font-weight:700;letter-spacing:-.055em;line-height:1;white-space:nowrap;display:inline-block}
+.wm i{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em;margin:0 .02em 0 .04em}
+.inv{color:var(--white)}
+.stamp{font-family:var(--serif);font-style:italic;line-height:1;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid currentColor;letter-spacing:-.02em}
+
+/* masthead */
+.mast{border-bottom:1px solid var(--ink);padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+.cover{padding:72px 0 48px;display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.cover .big{grid-column:1/-1;font-size:clamp(64px,15vw,220px)}
+.cover .deck{grid-column:7/-1;font-size:24px;line-height:1.3;font-family:var(--serif);margin-top:24px}
+.cover .meta{grid-column:1/5;margin-top:32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--ink);padding-top:14px}
+.cover .meta div{display:flex;justify-content:space-between;border-bottom:1px solid var(--haze);padding-bottom:10px;font-size:14px}
+
+section{padding:120px 0 40px}
+.sh{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:56px;align-items:start}
+.sh .num{grid-column:1/3;font-family:var(--serif);font-style:italic;font-size:96px;line-height:.8;color:var(--steel)}
+.sh h2{grid-column:3/9;font-size:56px}
+.sh p{grid-column:9/-1;font-size:15px;color:#4a5f6c;padding-top:8px}
+.sh .k{display:block;margin-bottom:14px;color:var(--steel)}
+.grid{display:grid;gap:24px}
+.cap{font-size:13px;color:#5d7383;margin-top:12px}
+.fn{font-size:12px;color:#5d7383;border-top:1px solid var(--haze);padding-top:10px;margin-top:14px}
+.fn sup{color:var(--steel);font-weight:700}
+
+.panel{background:var(--white);padding:36px;position:relative}
+.panel.ink{background:var(--ink);color:var(--white)}
+.panel.haze{background:var(--haze)}
+.panel.steel{background:var(--steel);color:var(--white)}
+
+/* 01 */
+.hero-wm{background:var(--white);padding:110px 48px;display:grid;place-items:center;position:relative}
+.hero-wm .wm{font-size:clamp(52px,9vw,124px)}
+.hero-wm .note{position:absolute;font-size:12px;color:#5d7383;max-width:220px}
+/* 04 */
+.palette{display:grid;grid-template-columns:3fr 2fr 1.2fr 1.2fr 1fr;height:340px}
+.palette>div{padding:20px;display:flex;flex-direction:column;justify-content:space-between;font-size:12px}
+.palette b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;letter-spacing:-.01em}
+/* 05 */
+.typo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.glyph{font-size:220px;line-height:.8;letter-spacing:-.06em}
+/* 06 */
+.dev{min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+.quote-mark{font-family:var(--serif);font-size:220px;line-height:.6;color:var(--steel);height:110px}
+/* 07 */
+.photo{position:relative;overflow:hidden;color:var(--white);display:flex;align-items:flex-end;padding:20px}
+.photo .sc{position:absolute;inset:0}
+.photo .t{position:relative}
+/* 08 */
+.cards{background:var(--haze);padding:80px 48px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.bc{width:340px;height:210px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 48px -24px rgba(38,59,73,.45)}
+/* 09 */
+.ig{aspect-ratio:4/5;padding:28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.ig h3{font-size:40px;letter-spacing:-.045em}
+/* 10 */
+.li{background:#fff;border:1px solid #e2e4e2;border-radius:8px;overflow:hidden;font-family:system-ui,sans-serif;font-size:13px}
+.li .hd{display:flex;gap:10px;align-items:center;padding:14px}
+.li .av{width:40px;height:40px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:18px}
+.li .tx{padding:0 14px 12px;color:#333}
+.li .im{aspect-ratio:1/1;padding:32px;display:flex;flex-direction:column;justify-content:space-between}
+.li .ft{border-top:1px solid #eee;padding:10px 14px;color:#666;font-size:12px}
+/* 11 */
+.ads{display:grid;grid-template-columns:1fr 1fr 220px;gap:24px;align-items:start}
+.ad{padding:24px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.btn{display:inline-block;font-weight:600;font-size:14px;padding:11px 18px;border:1.5px solid currentColor;letter-spacing:-.01em}
+.btn.fill{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* 12/13 */
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:var(--white);padding:72px}
+.doc{aspect-ratio:1/1.414;padding:40px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px -30px rgba(38,59,73,.4)}
+/* 14 */
+.browser{background:#fff;box-shadow:0 40px 80px -40px rgba(38,59,73,.45)}
+.chrome{height:36px;background:#e9eae6;display:flex;align-items:center;gap:6px;padding:0 14px}
+.chrome i{width:10px;height:10px;border-radius:50%;background:var(--haze)}
+.chrome span{margin-left:18px;background:#fff;font-size:11px;padding:2px 12px;color:var(--steel);width:260px}
+.site{background:var(--paper)}
+.site nav{display:flex;justify-content:space-between;align-items:center;padding:22px 48px;border-bottom:1px solid var(--ink)}
+.site nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
+.site .hb{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:72px 48px 64px}
+.site .hb h1{grid-column:1/11;font-size:104px;letter-spacing:-.055em}
+.site .hb aside{grid-column:9/-1;margin-top:28px}
+.site .ticker{border-top:1px solid var(--ink);display:flex;gap:48px;padding:16px 48px;white-space:nowrap;overflow:hidden;font-size:14px}
+/* 15 */
+.dos{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.dos .panel{min-height:180px;display:flex;flex-direction:column;justify-content:space-between}
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.voice div{border-top:2px solid var(--ink);padding-top:16px}
+footer{border-top:1px solid var(--ink);padding:32px 0 48px;margin-top:80px}
+
+@media (max-width:900px){
+  .wrap{padding:0 16px}
+  .cover .deck,.cover .meta,.sh .num,.sh h2,.sh p{grid-column:1/-1}
+  .sh h2{font-size:38px}.sh .num{font-size:64px}
+  .typo,.docs,.ads,.voice,.g2m{grid-template-columns:1fr!important}
+  .dos{grid-template-columns:1fr 1fr!important}.g4m{grid-template-columns:1fr!important}
+  .grid>*,.docs>*,.dos>*{min-width:0}.doc{padding:24px}.doc h2{font-size:40px!important}.doc .k{white-space:normal}
+  .dos .wm{font-size:18px!important}
+  .palette{grid-template-columns:1fr 1fr;height:auto}.palette>div{min-height:130px}
+  .docs,.cards{padding:24px}
+  .glyph{font-size:140px}
+  .hero-wm{padding:72px 16px}.hero-wm .note{display:none}
+  .site .hb h1{font-size:46px;grid-column:1/-1}.site .hb aside{grid-column:1/-1}
+  .site nav ul{display:none}.site nav,.site .hb,.site .ticker{padding-left:20px;padding-right:20px}
+  .ad{width:100%!important;max-width:100%}
+  .mast .hide{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="mast">
+  <span class="k">Brand identity · Direction B</span>
+  <span class="k hide">Issue Nº 02 · November 2026</span>
+  <span class="k">Exploratory</span>
+</div>
+
+<header class="cover">
+  <h1 class="big wm">ten <i>forty</i> five</h1>
+  <div class="meta">
+    <div><span>Direction</span><b>Editorial Intelligence</b></div>
+    <div><span>Register</span><b>Witty, current, human</b></div>
+    <div><span>Influences</span><b>Independent magazines, design studios</b></div>
+    <div><span>Device</span><b>The headline</b></div>
+  </div>
+  <p class="deck">A consultancy that writes like a good magazine reads: <span class="s">sharp opinions, generous space</span>, and a headline that earns the scroll. Serious about business, never stiff about it.</p>
+</header>
+
+<!-- 01 -->
+<section>
+  <div class="sh"><span class="num">01</span><h2><span class="k">Primary wordmark</span>Two voices, one name.</h2><p>Schibsted Grotesk Bold carries "ten" and "five". "Forty" shifts into Instrument Serif Italic, the brand's wink: the business partner who is also good company. The wordmark is always lowercase.</p></div>
+  <div class="hero-wm">
+    <span class="wm">ten <i>forty</i> five</span>
+    <span class="note" style="top:28px;left:32px"><sup>1</sup> Grotesk: structure, clarity, credibility.</span>
+    <span class="note" style="bottom:28px;right:32px;text-align:right"><sup>2</sup> Serif italic: wit, warmth, a human voice.</span>
+  </div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sh"><span class="num">02</span><h2><span class="k">Secondary &amp; compact</span>The masthead and the timestamp.</h2><p>The masthead lockup heads documents and newsletters. The compact mark reads "10:45": the name as a time, a stamp for social avatars, stickers and sign-offs.</p></div>
+  <div class="grid g2m" style="grid-template-columns:1.6fr 1fr 1fr">
+    <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between;min-height:260px">
+      <div style="border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 0;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap"><span class="wm" style="font-size:40px">ten <i>forty</i> five</span><span class="s" style="font-size:18px">Notes on growth</span></div>
+      <span class="cap">Secondary: masthead lockup</span>
+    </div>
+    <div class="panel ink" style="display:flex;flex-direction:column;justify-content:space-between">
+      <span class="stamp" style="width:120px;height:120px;font-size:44px">10:45</span>
+      <span class="cap" style="color:var(--haze)">Compact mark: avatar, favicon</span>
+    </div>
+    <div class="panel haze" style="display:flex;flex-direction:column;justify-content:space-between">
+      <span class="wm" style="font-size:72px">t<i>f</i>f</span>
+      <span class="cap" style="color:var(--ink)">Monogram: sign-offs, footers</span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sh"><span class="num">03</span><h2><span class="k">On light &amp; dark</span>Paper, ink, and steel.</h2><p>Paper is the default ground. Ink reverses for impact. Steel appears in campaign moments and never sits behind body text.</p></div>
+  <div class="grid g4m" style="grid-template-columns:repeat(4,1fr)">
+    <div class="panel" style="min-height:200px;display:flex;flex-direction:column;justify-content:space-between"><span class="wm" style="font-size:30px">ten <i>forty</i> five</span><span class="cap">Ink on white</span></div>
+    <div class="panel" style="background:var(--paper);outline:1px solid var(--haze);outline-offset:-1px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between"><span class="wm" style="font-size:30px">ten <i>forty</i> five</span><span class="cap">Ink on paper</span></div>
+    <div class="panel ink" style="min-height:200px;display:flex;flex-direction:column;justify-content:space-between"><span class="wm inv" style="font-size:30px">ten <i>forty</i> five</span><span class="cap" style="color:var(--haze)">Paper on ink</span></div>
+    <div class="panel steel" style="min-height:200px;display:flex;flex-direction:column;justify-content:space-between"><span class="wm inv" style="font-size:30px">ten <i>forty</i> five</span><span class="cap" style="color:#fff">White on steel</span></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sh"><span class="num">04</span><h2><span class="k">Colour</span>Restraint is the statement.</h2><p>A newsprint-inspired palette. Ink does the talking and paper gives it room. Steel and haze are punctuation, used sparingly.</p></div>
+  <div class="palette">
+    <div style="background:#263B49;color:#fff"><b>Ink</b><span>#263B49 · RGB 38 59 73<br>Headlines, reversed grounds</span></div>
+    <div style="background:#6B899E;color:#fff"><b>Steel</b><span>#6B899E · RGB 107 137 158<br>Accents, italics, links</span></div>
+    <div style="background:#BFCED7"><b>Haze</b><span>#BFCED7<br>Panels, rules</span></div>
+    <div style="background:#F5F5F2;outline:1px solid var(--haze);outline-offset:-1px"><b>Paper</b><span>#F5F5F2<br>Default ground</span></div>
+    <div style="background:#fff"><b>White</b><span>#FFFFFF</span></div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sh"><span class="num">05</span><h2><span class="k">Typography</span>Say it big. Then say it well.</h2><p>Oversized grotesk headlines create the impact. Serif italics add nuance, asides and emphasis, and should be used no more than once per layout.</p></div>
+  <div class="typo">
+    <div class="panel" style="min-height:440px;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="glyph" style="font-weight:700">Ag</div>
+      <div><h3 style="font-size:32px">Schibsted Grotesk</h3><p class="cap">Primary · Bold 700 for headlines, Regular 400 / Medium 500 for text · tracking −4% at display sizes</p></div>
+    </div>
+    <div class="panel ink" style="min-height:440px;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="glyph s" style="color:var(--haze)">Ag</div>
+      <div><h3 style="font-size:32px">Instrument Serif <span class="s" style="font-weight:400">Italic</span></h3><p class="cap" style="color:var(--haze)">Secondary · pull quotes, emphasis, numerals in editorial moments</p></div>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:24px">
+    <h2 style="font-size:64px">Marketing is a business problem <span class="s" style="font-weight:400;color:var(--steel)">wearing a nice outfit.</span></h2>
+    <p style="margin-top:20px;font-size:18px">Body copy is set at 16–18px with comfortable 1.55 leading. Write in short paragraphs, as if explaining it over coffee.</p>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sh"><span class="num">06</span><h2><span class="k">Graphic elements</span>Borrowed from the page.</h2><p>No illustrations, just the furniture of a well-made publication: rules, footnotes, pull quotes and folios. They give content structure, wit and a reading order.</p></div>
+  <div class="grid g2m" style="grid-template-columns:repeat(4,1fr)">
+    <div class="panel dev"><div class="quote-mark">“</div><span class="k" style="color:var(--steel)">Pull quote</span></div>
+    <div class="panel dev"><div><p style="font-size:22px;line-height:1.3">Your ads aren't the problem.<sup style="color:var(--steel)">1</sup></p><p class="fn"><sup>1</sup> Your landing page is.</p></div><span class="k" style="color:var(--steel)">Footnote reveal</span></div>
+    <div class="panel dev" style="padding:0"><div style="padding:36px"><div style="border-top:3px solid var(--ink)"></div><div style="border-top:1px solid var(--ink);margin-top:4px"></div><div style="display:flex;justify-content:space-between;margin-top:10px" class="k"><span>Section</span><span>p. 45</span></div></div><span class="k" style="color:var(--steel);padding:0 36px 36px">Rules &amp; folios</span></div>
+    <div class="panel ink dev"><div class="s" style="font-size:120px;line-height:.8;color:var(--haze)">Nº</div><span class="k" style="color:var(--haze)">Issue numbering</span></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sh"><span class="num">07</span><h2><span class="k">Photography &amp; art direction</span>Portraits, not poses.</h2><p>Shoot like a magazine profile: people who own businesses, photographed with character in their own spaces. Direct gaze, crops with tension, desaturated cool grade. Words lead; images support.</p></div>
+  <div class="grid g2m" style="grid-template-columns:2fr 1fr 1fr;grid-auto-rows:260px">
+    <div class="photo" style="grid-row:span 2"><div class="sc" style="background:linear-gradient(115deg,#BFCED7 0 46%,#6B899E 46%)"><div style="position:absolute;left:30%;bottom:0;width:30%;height:70%;background:#263B49"></div><div style="position:absolute;left:37%;top:14%;width:16%;height:22%;background:#263B49"></div></div><div class="t"><span class="k">The profile</span><br><span class="s" style="font-size:22px">Owner in their bakery, 7am, direct gaze</span></div></div>
+    <div class="photo"><div class="sc" style="background:#263B49"><div style="position:absolute;right:-10%;top:20%;width:70%;height:60%;background:#6B899E;opacity:.6"></div></div><div class="t"><span class="k">Tight crop</span><br><span class="s" style="font-size:18px">Hands, tools, texture</span></div></div>
+    <div class="photo" style="color:var(--ink)"><div class="sc" style="background:#F5F5F2"><div style="position:absolute;left:12%;top:12%;width:76%;height:46%;background:#BFCED7"></div></div><div class="t"><span class="k">Still life</span><br><span class="s" style="font-size:18px">Desk objects, one in focus</span></div></div>
+    <div class="photo" style="grid-column:span 2"><div class="sc" style="background:linear-gradient(90deg,#6B899E 0 30%,#BFCED7 30% 31%,#263B49 31%)"></div><div class="t"><span class="k">The wide</span><br><span class="s" style="font-size:18px">Team at work, shot through a doorway: observed, not staged</span></div></div>
+  </div>
+  <p class="fn" style="max-width:none">Tonal studies shown. Grade: −20 saturation, cool shadows, retained skin warmth. Never: laptops with glowing screens, handshakes, people pointing at whiteboards.</p>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sh"><span class="num">08</span><h2><span class="k">Business cards</span>A conversation starter.</h2><p>The back carries a rotating line, a small piece of the brand's voice to hand over with every card.</p></div>
+  <div class="cards">
+    <div class="bc" style="background:var(--paper);transform:rotate(-2deg)"><span class="wm" style="font-size:24px">ten <i>forty</i> five</span><p class="s" style="font-size:22px;line-height:1.15">"We sit next to you,<br>not above you."</p></div>
+    <div class="bc" style="background:var(--ink);color:#fff;transform:rotate(2.5deg)"><div><div style="font-weight:700;font-size:22px;letter-spacing:-.03em">Riley Moreno</div><div class="s" style="font-size:17px;color:var(--haze)">Strategy Director</div></div><div style="display:flex;justify-content:space-between;align-items:flex-end;font-size:12px;line-height:1.6"><span>riley@tenfortyfive.co<br>+1 (555) 010 1045</span><span class="stamp" style="width:48px;height:48px;font-size:15px;color:var(--haze)">10:45</span></div></div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sh"><span class="num">09</span><h2><span class="k">Instagram carousel</span>The headline is the image.</h2><p>Statement-led slides with no stock imagery and no icons. Oversized type does the stopping; the serif italic does the charming.</p></div>
+  <div class="grid g4m" style="grid-template-columns:repeat(4,1fr)">
+    <div class="ig" style="background:var(--ink);color:#fff"><span class="k" style="color:var(--haze)">Nº 12 · 1/5</span><h3>Nobody reads your mission statement.</h3><span class="s" style="font-size:18px;color:var(--haze)">Here's what they read instead →</span></div>
+    <div class="ig" style="background:var(--white)"><span class="k" style="color:var(--steel)">2/5</span><div><div class="s" style="font-size:90px;line-height:.8;color:var(--steel)">1.</div><h3 style="font-size:34px;margin-top:12px">Your Google reviews.</h3></div><p class="fn">Reply to every one. Yes, even <span class="s">that</span> one.</p></div>
+    <div class="ig" style="background:var(--haze)"><span class="k">3/5</span><div><div class="s" style="font-size:90px;line-height:.8;color:var(--ink)">2.</div><h3 style="font-size:34px;margin-top:12px">The first line of your homepage.</h3></div><p class="fn" style="border-color:var(--ink);color:var(--ink)">If it says "solutions," start again.</p></div>
+    <div class="ig" style="background:var(--paper);outline:1px solid var(--haze);outline-offset:-1px"><span class="k" style="color:var(--steel)">5/5</span><h3 style="font-size:36px">Fix those before you write <span class="s" style="font-weight:400;color:var(--steel)">another</span> mission statement.</h3><div style="display:flex;justify-content:space-between;align-items:center"><span class="k">Save · Share</span><span class="wm" style="font-size:15px">ten <i>forty</i> five</span></div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="sh"><span class="num">10</span><h2><span class="k">LinkedIn templates</span>Opinions with receipts.</h2><p>Editorial covers for long posts, and a pull-quote format for client voices. Each square uses the same three-zone grid of kicker, headline and sign-off.</p></div>
+  <div class="grid g2m" style="grid-template-columns:repeat(3,1fr)">
+    <div class="li"><div class="hd"><div class="av">t</div><div><b>ten forty five</b><br><span style="color:#777;font-size:12px">Business growth partner · 3h</span></div></div><div class="tx">We audited 40 small-business websites this year. The same mistake came up 31 times.</div>
+      <div class="im" style="background:var(--ink);color:#fff"><span class="k" style="color:var(--haze)">The audit · Nº 07</span><h3 style="font-size:46px">31 of 40 <span class="s" style="font-weight:400;color:var(--haze)">buried</span> the phone number.</h3><span class="wm inv" style="font-size:14px">ten <i>forty</i> five</span></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Repost</div></div>
+    <div class="li"><div class="hd"><div class="av">t</div><div><b>ten forty five</b><br><span style="color:#777;font-size:12px">Business growth partner · 1d</span></div></div><div class="tx">In their words, not ours.</div>
+      <div class="im" style="background:var(--paper)"><div class="quote-mark" style="font-size:160px;height:70px">“</div><p class="s" style="font-size:30px;line-height:1.1">They felt like part of our team from the first week. Our pipeline finally makes sense.</p><span class="k">— Priya S., founder, Stillwater Physio</span></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Repost</div></div>
+    <div class="li"><div class="hd"><div class="av">t</div><div><b>ten forty five</b><br><span style="color:#777;font-size:12px">Business growth partner · 4d</span></div></div><div class="tx">A short reading list for owners who hate marketing books.</div>
+      <div class="im" style="background:var(--haze)"><span class="k">Reading list</span><h3 style="font-size:52px">Five books.<br><span class="s" style="font-weight:400">Zero jargon.</span></h3><span class="wm" style="font-size:14px">ten <i>forty</i> five</span></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Repost</div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="sh"><span class="num">11</span><h2><span class="k">Digital advertising</span>A good line beats a loud colour.</h2><p>Ads written like headlines: one thought, landed well. In a feed full of gradients and faces, a confident sentence on paper stands out.</p></div>
+  <div class="ads">
+    <div class="ad" style="background:var(--white);aspect-ratio:1/1"><span class="k" style="color:var(--steel)">Sponsored · 1:1</span><h3 style="font-size:52px">Your marketing called. <span class="s" style="font-weight:400;color:var(--steel)">It wants a plan.</span></h3><div style="display:flex;justify-content:space-between;align-items:center"><span class="btn fill">Book a call</span><span class="wm" style="font-size:15px">ten <i>forty</i> five</span></div></div>
+    <div class="ad" style="background:var(--ink);color:#fff;aspect-ratio:1/1"><span class="k" style="color:var(--haze)">Sponsored · 1:1</span><div><div class="s" style="font-size:120px;line-height:.8;color:var(--haze)">45</div><h3 style="font-size:36px;margin-top:12px">minutes to a clearer growth plan. Free, honest, useful.</h3></div><div style="display:flex;justify-content:space-between;align-items:center"><span class="btn">Claim your session</span><span class="wm inv" style="font-size:15px">ten <i>forty</i> five</span></div></div>
+    <div class="ad" style="background:var(--steel);color:#fff;width:220px;aspect-ratio:9/16"><span class="k">Story</span><h3 style="font-size:34px">Less agency.<br><span class="s" style="font-weight:400">More ally.</span></h3><span class="wm inv" style="font-size:14px">ten <i>forty</i> five</span></div>
+  </div>
+</section>
+
+<!-- 12/13 -->
+<section>
+  <div class="sh"><span class="num">12</span><h2><span class="k">Proposal &amp; workbook covers</span>Covers you'd leave on the desk.</h2><p>The proposal reads like a feature with the client named in the headline. The workbook borrows the cover language of an independent magazine.</p></div>
+  <div class="docs">
+    <div class="doc" style="background:var(--paper)">
+      <div style="border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:10px 0;display:flex;justify-content:space-between;align-items:baseline"><span class="wm" style="font-size:18px">ten <i>forty</i> five</span><span class="k">Proposal</span></div>
+      <div><span class="k" style="color:var(--steel)">Prepared for Harbour &amp; Pine Interiors</span><h2 style="font-size:54px;margin-top:16px">The next <span class="s" style="font-weight:400">chapter</span> of growth.</h2></div>
+      <div style="display:flex;justify-content:space-between" class="k"><span>Strategy · Systems · Execution</span><span>December 2026</span></div>
+    </div>
+    <div class="doc" style="background:var(--ink);color:#fff">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="wm inv" style="font-size:18px">ten <i>forty</i> five</span><span class="stamp" style="width:52px;height:52px;font-size:16px;color:var(--haze)">Nº 01</span></div>
+      <div><h2 style="font-size:72px">Marketing,<br><span class="s" style="font-weight:400;color:var(--haze)">minus the</span><br>overwhelm.</h2><p style="margin-top:20px;color:var(--haze)">A workbook for owners doing it themselves, for now.</p></div>
+      <div class="k" style="color:var(--haze)">Free workbook · 24 pages · tenfortyfive.co</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section>
+  <div class="sh"><span class="num">14</span><h2><span class="k">Website hero</span>The front page.</h2><p>A homepage that reads like a cover story: one enormous line, a considered standfirst, and a ticker of proof running along the fold.</p></div>
+  <div class="browser">
+    <div class="chrome"><i></i><i></i><i></i><span>tenfortyfive.co</span></div>
+    <div class="site">
+      <nav><span class="wm" style="font-size:22px">ten <i>forty</i> five</span><ul><li>Services</li><li>How we work</li><li>Journal</li><li>Workbooks</li></ul><span class="btn fill">Let's talk</span></nav>
+      <div class="hb">
+        <span class="k" style="grid-column:1/-1;color:var(--steel)">Business growth partner · Est. 2026</span>
+        <h1>We sit next to you, <span class="s" style="font-weight:400;color:var(--steel)">not above you.</span></h1>
+        <aside><p style="font-size:18px">Strategy, digital experiences and automation, from a team that works like it's already on your payroll.</p><div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap"><span class="btn fill">Book a growth call</span><span class="btn">Read the journal</span></div></aside>
+      </div>
+      <div class="ticker"><span><b>+212%</b> organic enquiries · Coastline Dental</span><span class="s" style="color:var(--steel)">—</span><span><b>−38%</b> cost per lead · Ridge &amp; Co.</span><span class="s" style="color:var(--steel)">—</span><span><b>14 hrs/wk</b> saved via automation · Fable Bakery</span><span class="s" style="color:var(--steel)">—</span><span><b>3.4×</b> booked calls</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section>
+  <div class="sh"><span class="num">15</span><h2><span class="k">Usage guidelines</span>House style.</h2><p>Editorial doesn't mean decorative. Every layout should still pass the test: would a busy business owner understand this in three seconds?</p></div>
+  <div class="dos">
+    <div class="panel"><span class="k" style="color:var(--steel)">✓ Do</span><span class="wm" style="font-size:26px">ten <i>forty</i> five</span></div>
+    <div class="panel"><span class="k" style="color:#9b4a4a">✕ All grotesk</span><span class="wm" style="font-size:26px;opacity:.45">ten forty five</span></div>
+    <div class="panel"><span class="k" style="color:#9b4a4a">✕ Wrong word italic</span><span class="wm" style="font-size:26px;opacity:.45"><i>ten</i> forty five</span></div>
+    <div class="panel"><span class="k" style="color:#9b4a4a">✕ Title case</span><span class="wm" style="font-size:26px;opacity:.45">Ten <i>Forty</i> Five</span></div>
+  </div>
+  <div class="voice">
+    <div><span class="k">Layout</span><p style="margin-top:8px">Asymmetric, never random. Hang headlines from the 12-column grid, leave at least one third of each layout empty, and use one serif italic moment per composition.</p></div>
+    <div><span class="k">Voice</span><p style="margin-top:8px"><span class="s" style="font-size:20px">We say:</span> "Your ads aren't the problem." <span class="s" style="font-size:20px">We don't say:</span> "Leverage synergistic omnichannel solutions." Witty, never snarky. Clever only when it makes things clearer.</p></div>
+  </div>
+</section>
+
+<footer style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px"><span class="wm" style="font-size:28px">ten <i>forty</i> five</span><span class="k">Direction B · Editorial Intelligence · Exploratory palette, not approved</span></footer>
+</div>
+</body>
+</html>

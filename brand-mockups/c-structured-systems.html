@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structured Systems Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#182D3D; --steel:#46758E; --sky:#8BAABB; --frost:#DDE8ED; --white:#FFFFFF;
+  --line:rgba(70,117,142,.22);
+  --sans:"Geist",system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{background:var(--white);color:var(--deep);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.m{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:1.02}
+p{max-width:60ch}
+.gridbg{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px}
+.gridbg-d{background-color:var(--deep);background-image:linear-gradient(rgba(139,170,187,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(139,170,187,.13) 1px,transparent 1px);background-size:32px 32px}
+
+/* wordmark + mark */
+.wm{font-weight:500;letter-spacing:-.05em;line-height:1;white-space:nowrap;display:inline-flex;align-items:center;gap:.32em}
+.wm svg{width:.92em;height:.92em;flex:none}
+.wm.only svg{display:none}
+.mk{display:block}
+.inv{color:#fff}
+
+header.cover{color:#fff;position:relative;overflow:hidden}
+.cover .in{padding:32px 0 0}
+.cover .top{display:flex;justify-content:space-between;color:var(--sky)}
+.cover .body{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:112px 0 80px;align-items:end}
+.cover .body .wm{grid-column:1/-1;font-size:clamp(54px,10.5vw,148px)}
+.cover .body p{grid-column:1/6;color:var(--sky);font-size:17px;margin-top:40px}
+.cover .spec{grid-column:8/-1;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(139,170,187,.4);margin-top:40px}
+.cover .spec div{padding:12px 0;border-bottom:1px solid rgba(139,170,187,.25)}
+.cover .spec b{display:block;font-weight:500;font-size:15px;color:#fff;text-transform:none;letter-spacing:-.01em;font-family:var(--sans)}
+
+section{padding:96px 0;border-bottom:1px solid var(--frost)}
+.sh{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-bottom:48px;align-items:end}
+.sh .id{grid-column:1/4;display:flex;gap:10px;align-items:center;color:var(--steel)}
+.sh .id i{width:10px;height:10px;background:var(--steel);display:block}
+.sh h2{grid-column:4/9;font-size:40px}
+.sh p{grid-column:9/-1;color:#4b6677;font-size:14px}
+.grid{display:grid;gap:16px}
+.cell{border:1px solid var(--frost);padding:28px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.cell.deep{background:var(--deep);border-color:var(--deep);color:#fff}
+.cell.frost{background:var(--frost);border-color:var(--frost)}
+.cell.steel{background:var(--steel);border-color:var(--steel);color:#fff}
+.lbl{color:var(--steel)}
+.deep .lbl,.steel .lbl{color:var(--sky)}
+
+/* 01 */
+.wm-stage{height:400px;display:grid;place-items:center;position:relative;border:1px solid var(--frost)}
+.wm-stage .wm{font-size:clamp(46px,8.5vw,112px)}
+.corner{position:absolute;width:14px;height:14px;border-color:var(--steel);border-style:solid}
+/* 02 construction */
+.constr{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px}
+/* 04 */
+.pal{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.chip{display:flex;flex-direction:column}
+.chip .c{aspect-ratio:1/1;position:relative}
+.chip .c span{position:absolute;left:12px;bottom:12px}
+.chip .d{padding:12px 0;border-bottom:1px solid var(--frost);display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px}
+.chip .d+.d{padding-top:8px}
+/* 05 */
+.tw{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.gg{font-size:180px}
+.tw .a{grid-column:1/8}.tw .b{grid-column:8/-1}
+.trow{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--frost);padding:16px 0;align-items:baseline}
+/* 06 */
+.pat{aspect-ratio:1/1;position:relative;overflow:hidden}
+.pat svg{position:absolute;inset:0;width:100%;height:100%}
+.pat .m{position:absolute;left:14px;bottom:12px}
+/* 07 */
+.ph{aspect-ratio:3/4;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:16px;color:#fff}
+.ph .s{position:absolute;inset:0}
+.ph .t{position:relative;background:rgba(24,45,61,.85);padding:10px 12px;width:100%}
+/* 08 */
+.stage{background:var(--frost);padding:72px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.bc{width:350px;height:200px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 22px 44px -22px rgba(24,45,61,.5)}
+/* 09 */
+.ig{aspect-ratio:1/1;padding:24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.ig h3{font-size:28px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.steps i{height:3px;background:currentColor;opacity:.25}.steps i.on{opacity:1}
+/* 10 */
+.li{background:#fff;border:1px solid #dfe5ea;border-radius:8px;overflow:hidden;font-family:system-ui,sans-serif;font-size:13px}
+.li .hd{display:flex;gap:10px;padding:14px;align-items:center}
+.li .av{width:40px;height:40px}
+.li .tx{padding:0 14px 12px;color:#333}
+.li .im{aspect-ratio:1.91/1;padding:28px;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--sans)}
+.li .ft{padding:10px 14px;border-top:1px solid #eef1f3;font-size:12px;color:#666}
+/* 11 */
+.ads{display:grid;grid-template-columns:300px 1fr;gap:16px}
+.ad{padding:20px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:13px;padding:10px 14px;background:var(--steel);color:#fff;letter-spacing:-.01em}
+.btn::after{content:"→";font-family:var(--mono)}
+.btn.w{background:#fff;color:var(--deep)}
+.btn.d{background:var(--deep)}
+.btn.o{background:transparent;color:var(--deep);border:1px solid var(--deep)}
+/* 12-13 */
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--frost);padding:64px}
+.doc{aspect-ratio:1/1.414;padding:36px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px -30px rgba(24,45,61,.5);position:relative;overflow:hidden}
+/* 14 */
+.browser{border:1px solid var(--frost);box-shadow:0 30px 80px -40px rgba(24,45,61,.45)}
+.chrome{height:36px;background:var(--frost);display:flex;align-items:center;gap:6px;padding:0 14px}
+.chrome i{width:10px;height:10px;border-radius:50%;background:var(--sky)}
+.chrome span{margin-left:18px;background:#fff;font-family:var(--mono);font-size:10px;padding:3px 10px;width:260px;color:var(--steel)}
+.site nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid var(--frost)}
+.site nav ul{display:flex;gap:28px;list-style:none;font-size:13px}
+.site .hero{display:grid;grid-template-columns:1.1fr 1fr;min-height:520px}
+.site .hero .l{padding:72px 40px;display:flex;flex-direction:column;justify-content:center}
+.site .hero h1{font-size:62px;letter-spacing:-.045em}
+.site .hero .r{position:relative;border-left:1px solid var(--frost)}
+/* 15 */
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dd{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.dd .cell{min-height:150px}
+footer{padding:40px 0}
+
+@media (max-width:900px){
+  .wrap{padding:0 16px}
+  .cover .body p,.cover .spec,.sh .id,.sh h2,.sh p,.tw .a,.tw .b{grid-column:1/-1}
+  .constr,.ads,.docs,.rules,.site .hero,.mq1{grid-template-columns:1fr!important}
+  .pal,.dd,.mq2{grid-template-columns:1fr 1fr!important}
+  .grid>*,.docs>*,.dd>*{min-width:0}
+  .docs,.stage{padding:20px}
+  .doc{padding:24px}.doc h2{font-size:34px!important}
+  .site nav ul{display:none}.site nav{padding:16px 20px}.site .hero .l{padding:40px 20px}.site .hero h1{font-size:40px}.site .hero .r{min-height:260px;border-left:0;border-top:1px solid var(--frost)}
+  .ad{width:100%!important;height:auto!important;min-height:90px;flex-wrap:wrap;gap:10px}
+  .bc{width:100%;max-width:350px}
+  .dd .wm{font-size:16px!important}
+  .gg{font-size:110px!important}
+}
+</style>
+</head>
+<body>
+
+<!-- the compact mark: a square clock face set to 10:45, hands drawn with square caps -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mk" viewBox="0 0 100 100">
+      <rect x="0" y="0" width="100" height="100" fill="currentColor"/>
+      <g stroke="var(--mk-fg,#fff)" stroke-width="9" stroke-linecap="square" fill="none">
+        <line x1="50" y1="50" x2="18" y2="50"/>
+        <line x1="50" y1="50" x2="37" y2="33"/>
+      </g>
+    </symbol>
+    <symbol id="mk-o" viewBox="0 0 100 100">
+      <rect x="4" y="4" width="92" height="92" fill="none" stroke="currentColor" stroke-width="8"/>
+      <g stroke="currentColor" stroke-width="9" stroke-linecap="square" fill="none">
+        <line x1="50" y1="50" x2="22" y2="50"/>
+        <line x1="50" y1="50" x2="38" y2="34"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="cover gridbg-d">
+  <div class="wrap in">
+    <div class="top m"><span>Brand identity / Direction C</span><span>v0.3 · Nov 2026 · Exploratory</span></div>
+    <div class="body">
+      <div class="wm inv"><svg style="color:var(--steel)"><use href="#mk"/></svg>ten forty five</div>
+      <p>Structured Systems. An identity built like a well-designed operating system: modular, measured and quietly clever. It shows the work of simplifying complexity without dressing up as a tech company.</p>
+      <div class="spec m">
+        <div style="padding-right:16px">Direction<b>Structured Systems</b></div>
+        <div>Module<b>32px base grid</b></div>
+        <div style="padding-right:16px">Mark<b>10:45, as geometry</b></div>
+        <div>Angle<b>45° as the only diagonal</b></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 01 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>01 / Primary wordmark</div><h2>The name, set like a specification.</h2><p>Geist Medium at −5% tracking. Clean, engineered letterforms with no rounded terminals. The wordmark always stands alone as the primary logo; the compact mark sits beside it only in the horizontal lockup.</p></div>
+  <div class="wm-stage gridbg">
+    <span class="corner" style="top:16px;left:16px;border-width:1px 0 0 1px"></span><span class="corner" style="top:16px;right:16px;border-width:1px 1px 0 0"></span><span class="corner" style="bottom:16px;left:16px;border-width:0 0 1px 1px"></span><span class="corner" style="bottom:16px;right:16px;border-width:0 1px 1px 0"></span>
+    <span class="wm only" style="background:#fff;padding:12px 20px">ten forty five</span>
+    <span class="m lbl" style="position:absolute;left:40px;top:40px">x = 1 module</span>
+    <span class="m lbl" style="position:absolute;right:40px;bottom:40px">Clear space: 2 modules on all sides</span>
+  </div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>02 / Secondary &amp; compact marks</div><h2>10:45, drawn as a system.</h2><p>The compact mark is a clock without the clock. Two hands set to 10:45 sit inside a square module. It reads as a measured angle, a moment of decision, the first step of a process. No circles, no gears, no circuitry.</p></div>
+  <div class="constr">
+    <div class="cell gridbg" style="min-height:340px;align-items:center;justify-content:center;padding:40px">
+      <svg viewBox="-10 -10 120 120" style="width:240px;height:240px;color:var(--deep)" aria-label="Construction of the compact mark">
+        <rect x="0" y="0" width="100" height="100" fill="var(--deep)"/>
+        <g stroke="#fff" stroke-width="9" stroke-linecap="square"><line x1="50" y1="50" x2="18" y2="50"/><line x1="50" y1="50" x2="37" y2="33"/></g>
+        <g stroke="#8BAABB" stroke-width=".6" stroke-dasharray="2 2" fill="none"><line x1="50" y1="-10" x2="50" y2="110"/><line x1="-10" y1="50" x2="110" y2="50"/><line x1="50" y1="50" x2="22" y2="13"/></g>
+        <text x="55" y="-3" font-family="Geist Mono" font-size="5" fill="#46758E">12</text>
+        <text x="-9" y="47" font-family="Geist Mono" font-size="5" fill="#46758E">:45</text>
+        <text x="8" y="12" font-family="Geist Mono" font-size="5" fill="#46758E">10</text>
+      </svg>
+      <span class="m lbl" style="position:absolute;bottom:16px;left:16px">Construction · minute hand at :45, hour hand at 10¾</span>
+    </div>
+    <div class="cell" style="align-items:flex-start">
+      <span class="wm" style="font-size:38px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span>
+      <span class="m lbl">Secondary: horizontal lockup</span>
+    </div>
+    <div class="grid" style="grid-template-rows:1fr 1fr">
+      <div class="cell deep" style="min-height:0;flex-direction:row;align-items:center;justify-content:space-between"><svg class="mk" width="72" height="72" style="color:var(--steel)"><use href="#mk"/></svg><span class="m lbl" style="text-align:right">Compact mark<br>avatar / app</span></div>
+      <div class="cell frost" style="min-height:0;flex-direction:row;align-items:center;justify-content:space-between"><svg class="mk" width="72" height="72" style="color:var(--deep)"><use href="#mk-o"/></svg><span class="m lbl" style="text-align:right">Outline variant<br>favicon / stamp</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>03 / Light &amp; dark</div><h2>Four grounds, one behaviour.</h2><p>On dark grounds the mark takes steel; on light grounds it takes deep blue. The wordmark is always solid, never outlined.</p></div>
+  <div class="grid mq2" style="grid-template-columns:repeat(4,1fr)">
+    <div class="cell"><span class="wm" style="font-size:26px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span><span class="m lbl">Deep on white</span></div>
+    <div class="cell frost"><span class="wm" style="font-size:26px"><svg style="color:var(--steel)"><use href="#mk"/></svg>ten forty five</span><span class="m lbl">Deep on frost</span></div>
+    <div class="cell deep"><span class="wm inv" style="font-size:26px"><svg style="color:var(--steel)"><use href="#mk"/></svg>ten forty five</span><span class="m lbl">White on deep</span></div>
+    <div class="cell steel"><span class="wm inv" style="font-size:26px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span><span class="m lbl" style="color:#fff">White on steel</span></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>04 / Colour</div><h2>A calibrated scale.</h2><p>Five steps from deep to white, used like tokens in a design system. Each step has a role; none is decorative.</p></div>
+  <div class="pal">
+    <div class="chip"><div class="c" style="background:#182D3D"><span class="m" style="color:#fff">01 · Deep</span></div><div class="d"><span>#182D3D</span><span>Primary</span></div><div class="d"><span>24 45 61</span><span>Text / ground</span></div></div>
+    <div class="chip"><div class="c" style="background:#46758E"><span class="m" style="color:#fff">02 · Steel</span></div><div class="d"><span>#46758E</span><span>Accent</span></div><div class="d"><span>70 117 142</span><span>Mark / CTA</span></div></div>
+    <div class="chip"><div class="c" style="background:#8BAABB"><span class="m">03 · Sky</span></div><div class="d"><span>#8BAABB</span><span>Support</span></div><div class="d"><span>139 170 187</span><span>Data / lines</span></div></div>
+    <div class="chip"><div class="c" style="background:#DDE8ED"><span class="m">04 · Frost</span></div><div class="d"><span>#DDE8ED</span><span>Surface</span></div><div class="d"><span>221 232 237</span><span>Panels</span></div></div>
+    <div class="chip"><div class="c" style="background:#fff;border:1px solid var(--frost)"><span class="m">05 · White</span></div><div class="d"><span>#FFFFFF</span><span>Base</span></div><div class="d"><span>255 255 255</span><span>Page</span></div></div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>05 / Typography</div><h2>One family, two modes.</h2><p>Geist for everything people read. Geist Mono for everything people measure: labels, steps, data, metadata. Together they say "designed and engineered."</p></div>
+  <div class="tw">
+    <div class="a cell deep gridbg-d" style="min-height:420px">
+      <div class="gg" style="font-weight:500;letter-spacing:-.06em;line-height:.8">Gg<span style="color:var(--steel)">45</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><div><h3 style="font-size:28px">Geist</h3><span class="m lbl">Primary · 400 / 500 / 600</span></div><div style="text-align:right"><div style="font-family:var(--mono);font-size:28px">Geist Mono</div><span class="m lbl">Secondary · 400 / 500</span></div></div>
+    </div>
+    <div class="b">
+      <div class="trow"><span class="m lbl">Display / 56</span><span style="font-size:44px;font-weight:500;letter-spacing:-.045em;line-height:1">Simplify the system.</span></div>
+      <div class="trow"><span class="m lbl">Heading / 28</span><span style="font-size:24px;font-weight:500;letter-spacing:-.03em">Less effort, more outcome.</span></div>
+      <div class="trow"><span class="m lbl">Body / 15</span><span>Readable, plain and efficient. We explain how the system works, not how clever it is.</span></div>
+      <div class="trow"><span class="m lbl">Mono / 11</span><span class="m">Step 03 → Automate follow-up</span></div>
+      <div class="trow"><span class="m lbl">Data / 40</span><span style="font-family:var(--mono);font-size:34px;letter-spacing:-.04em">14.5 <span style="color:var(--steel)">hrs/wk</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>06 / Graphic elements</div><h2>Complexity, resolved.</h2><p>The system's core device shows scattered modules snapping into order. Supporting it: the 32px grid, a 45° diagonal used once per layout, and flow lines that connect steps.</p></div>
+  <div class="grid mq2" style="grid-template-columns:repeat(4,1fr)">
+    <div class="pat" style="background:var(--frost)">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><g fill="#46758E">
+        <rect x="22" y="30" width="16" height="16" transform="rotate(14 30 38)"/><rect x="60" y="18" width="16" height="16" transform="rotate(-22 68 26)" fill="#8BAABB"/><rect x="40" y="68" width="16" height="16" transform="rotate(33 48 76)" fill="#182D3D"/><rect x="82" y="56" width="16" height="16" transform="rotate(8 90 64)"/><rect x="18" y="108" width="16" height="16" transform="rotate(-38 26 116)" fill="#8BAABB"/><rect x="70" y="100" width="16" height="16" transform="rotate(25 78 108)" fill="#182D3D"/>
+        <rect x="112" y="128" width="16" height="16"/><rect x="132" y="128" width="16" height="16" fill="#8BAABB"/><rect x="152" y="128" width="16" height="16" fill="#182D3D"/><rect x="112" y="148" width="16" height="16" fill="#182D3D"/><rect x="132" y="148" width="16" height="16"/><rect x="152" y="148" width="16" height="16" fill="#8BAABB"/>
+      </g></svg><span class="m lbl">Resolve: chaos → order</span>
+    </div>
+    <div class="pat gridbg"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="#182D3D"><rect x="32" y="32" width="64" height="64"/><rect x="96" y="96" width="32" height="32" fill="#46758E"/><rect x="128" y="32" width="32" height="64" fill="#8BAABB"/></g></svg><span class="m lbl">Module grid · 32px</span></div>
+    <div class="pat" style="background:var(--deep)"><svg viewBox="0 0 200 200" aria-hidden="true"><g stroke="#46758E" stroke-width="1"><line x1="0" y1="200" x2="200" y2="0"/><line x1="40" y1="200" x2="200" y2="40" stroke="#8BAABB" stroke-opacity=".35"/><line x1="80" y1="200" x2="200" y2="80" stroke="#8BAABB" stroke-opacity=".2"/></g><rect x="92" y="92" width="16" height="16" fill="#fff"/></svg><span class="m" style="position:absolute;left:14px;bottom:12px;color:var(--sky)">45° diagonal</span></div>
+    <div class="pat" style="background:#fff;border:1px solid var(--frost)"><svg viewBox="0 0 200 200" aria-hidden="true"><g stroke="#46758E" stroke-width="1.5" fill="none"><path d="M40 50 H100 V100 H160 V150"/></g><g fill="#182D3D"><rect x="32" y="42" width="16" height="16"/><rect x="92" y="92" width="16" height="16" fill="#46758E"/><rect x="152" y="142" width="16" height="16"/></g><g font-family="Geist Mono" font-size="8" fill="#46758E"><text x="54" y="44">01 capture</text><text x="114" y="94">02 qualify</text><text x="108" y="172">03 convert</text></g></svg><span class="m lbl">Flow lines</span></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>07 / Photography &amp; art direction</div><h2>Systems in real places.</h2><p>Show the effect of good systems, not the technology: clear desks, organised stockrooms, calm front counters, a phone with one tidy notification. Shoot square-on and symmetrically, then crop to the module grid.</p></div>
+  <div class="grid mq2" style="grid-template-columns:repeat(4,1fr)">
+    <div class="ph"><div class="s gridbg" style="background-color:#DDE8ED"><div style="position:absolute;left:16%;right:16%;top:18%;height:44%;display:grid;grid-template-columns:repeat(3,1fr);gap:6px"><i style="background:#46758E"></i><i style="background:#8BAABB"></i><i style="background:#182D3D"></i><i style="background:#8BAABB"></i><i style="background:#182D3D"></i><i style="background:#46758E"></i></div></div><div class="t"><span class="m">Order</span><br><small>Shelving, labelled stock, shot square-on</small></div></div>
+    <div class="ph"><div class="s" style="background:#46758E"><div style="position:absolute;left:30%;top:16%;width:40%;height:56%;background:#182D3D"></div><div style="position:absolute;left:36%;top:24%;width:28%;height:6%;background:#DDE8ED"></div></div><div class="t"><span class="m">Signal</span><br><small>One clean notification, not a dashboard</small></div></div>
+    <div class="ph"><div class="s" style="background:linear-gradient(180deg,#8BAABB 0 60%,#182D3D 60%)"><div style="position:absolute;left:0;right:0;top:60%;height:2px;background:#DDE8ED"></div></div><div class="t"><span class="m">Calm</span><br><small>Front counter at opening time, nobody waiting</small></div></div>
+    <div class="ph"><div class="s" style="background:#182D3D"><svg viewBox="0 0 100 133" style="position:absolute;inset:0;width:100%;height:100%"><line x1="0" y1="133" x2="100" y2="33" stroke="#46758E" stroke-width="18"/></svg></div><div class="t"><span class="m">Structure</span><br><small>Architecture, stairs, strong diagonals</small></div></div>
+  </div>
+  <p class="m lbl" style="margin-top:16px">Tonal studies shown. Grade: cool, low-contrast, one steel accent per frame. Never: robots, glowing UI, people in VR headsets.</p>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>08 / Business cards</div><h2>Modular, even in your wallet.</h2><p>The front is printed with a faint module grid and the mark sits exactly on it. The back sets the details like a spec sheet.</p></div>
+  <div class="stage">
+    <div class="bc gridbg-d" style="color:#fff"><svg class="mk" width="40" height="40" style="color:var(--steel)"><use href="#mk"/></svg><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="wm inv only" style="font-size:22px">ten forty five</span><span class="m" style="color:var(--sky)">10:45</span></div></div>
+    <div class="bc" style="background:#fff"><div><div style="font-weight:500;font-size:19px;letter-spacing:-.03em">Sam Okafor</div><div class="m lbl" style="margin-top:4px">Automation Lead</div></div>
+      <div style="display:grid;grid-template-columns:60px 1fr;row-gap:4px;font-family:var(--mono);font-size:10.5px"><span style="color:var(--sky)">E</span><span>sam@tenfortyfive.co</span><span style="color:var(--sky)">T</span><span>+1 (555) 010 1045</span><span style="color:var(--sky)">W</span><span>tenfortyfive.co</span></div></div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>09 / Instagram carousel</div><h2>Every lesson is a process.</h2><p>Educational carousels are framed as numbered systems. The step bar shows progress and the module device shows the idea simplifying slide by slide.</p></div>
+  <div class="grid mq2" style="grid-template-columns:repeat(4,1fr)">
+    <div class="ig gridbg-d" style="color:#fff"><div class="steps"><i class="on"></i><i></i><i></i><i></i><i></i></div><h3>Automate your follow-up in 4 steps.</h3><div style="display:flex;justify-content:space-between;align-items:center"><span class="m" style="color:var(--sky)">System 07</span><svg class="mk" width="28" height="28" style="color:var(--steel)"><use href="#mk"/></svg></div></div>
+    <div class="ig" style="background:var(--frost)"><div class="steps"><i></i><i class="on"></i><i></i><i></i><i></i></div><div><span class="m lbl">Step 01</span><h3 style="margin-top:8px">Capture every enquiry in one place.</h3></div><div style="display:flex;gap:6px"><i style="width:22px;height:22px;background:var(--deep)"></i><i style="width:22px;height:22px;background:var(--steel);transform:rotate(18deg)"></i><i style="width:22px;height:22px;background:var(--sky);transform:rotate(-24deg)"></i></div></div>
+    <div class="ig" style="background:#fff;border:1px solid var(--frost)"><div class="steps"><i></i><i></i><i class="on"></i><i></i><i></i></div><div><span class="m lbl">Step 02</span><h3 style="margin-top:8px">Send a reply within 5 minutes, automatically.</h3></div><div style="display:flex;gap:6px"><i style="width:22px;height:22px;background:var(--deep)"></i><i style="width:22px;height:22px;background:var(--steel)"></i><i style="width:22px;height:22px;background:var(--sky);transform:rotate(-12deg)"></i></div></div>
+    <div class="ig" style="background:var(--steel);color:#fff"><div class="steps"><i></i><i></i><i></i><i></i><i class="on"></i></div><div><span class="m" style="color:var(--deep)">Result</span><div style="font-family:var(--mono);font-size:56px;letter-spacing:-.05em;line-height:1;margin-top:6px">−6 hrs</div><span>of admin, every week.</span></div><span class="wm inv" style="font-size:14px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>10 / LinkedIn templates</div><h2>Frameworks people save.</h2><p>Two formats: a framework card that lays out a method as a mini-diagram, and a before/after card for transformation stories.</p></div>
+  <div class="grid mq1" style="grid-template-columns:1fr 1fr">
+    <div class="li"><div class="hd"><svg class="av" style="color:var(--deep)"><use href="#mk"/></svg><div><b>ten forty five</b><br><span style="color:#666;font-size:12px">Business growth partner · 5h</span></div></div><div class="tx">The 3-layer model we use to fix "we need more leads." Spoiler: you usually need fewer leaks.</div>
+      <div class="im gridbg-d" style="color:#fff"><span class="m" style="color:var(--sky)">Framework / 3 layers</span>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><div style="border-top:2px solid var(--sky);padding-top:8px"><span class="m" style="color:var(--sky)">01</span><div style="font-size:20px;font-weight:500;letter-spacing:-.03em">Attract</div></div><div style="border-top:2px solid var(--steel);padding-top:8px"><span class="m" style="color:var(--sky)">02</span><div style="font-size:20px;font-weight:500;letter-spacing:-.03em">Convert</div></div><div style="border-top:2px solid #fff;padding-top:8px"><span class="m" style="color:var(--sky)">03</span><div style="font-size:20px;font-weight:500;letter-spacing:-.03em">Retain</div></div></div>
+        <span class="wm inv" style="font-size:13px"><svg style="color:var(--steel)"><use href="#mk"/></svg>ten forty five</span></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Repost</div></div>
+    <div class="li"><div class="hd"><svg class="av" style="color:var(--deep)"><use href="#mk"/></svg><div><b>ten forty five</b><br><span style="color:#666;font-size:12px">Business growth partner · 2d</span></div></div><div class="tx">Same team. Same budget. Different system.</div>
+      <div class="im" style="background:var(--frost);display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="display:flex;flex-direction:column;justify-content:space-between"><span class="m lbl">Before</span><div style="font-family:var(--mono);font-size:40px;letter-spacing:-.05em;line-height:1;color:var(--sky)">7 tools</div><span style="font-size:13px">Spreadsheets, sticky notes, missed calls</span></div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--sky);padding-left:16px"><span class="m lbl">After</span><div style="font-family:var(--mono);font-size:40px;letter-spacing:-.05em;line-height:1">1 system</div><span style="font-size:13px">Every lead tracked, every reply automatic</span></div></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Repost</div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>11 / Digital advertising</div><h2>Show the shortcut.</h2><p>Ads promise a simpler way and show it through the module device. They are calm and precise, and built so the content can be swapped without breaking the layout.</p></div>
+  <div class="ads">
+    <div class="ad gridbg-d" style="width:300px;height:250px;color:#fff"><svg class="mk" width="28" height="28" style="color:var(--steel)"><use href="#mk"/></svg><h3 style="font-size:25px">Stop doing by hand what a system can do for you.</h3><span class="btn w">See how</span></div>
+    <div class="ad" style="background:var(--frost);height:250px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center">
+      <div><span class="m lbl">For growing teams</span><h3 style="font-size:34px;margin-top:10px">Your marketing,<br>running on a system.</h3><div style="margin-top:20px"><span class="btn d">Get a free systems audit</span></div></div>
+      <svg viewBox="0 0 120 120" width="150" height="150" aria-hidden="true"><g fill="#46758E"><rect x="6" y="10" width="20" height="20" transform="rotate(20 16 20)"/><rect x="34" y="4" width="20" height="20" transform="rotate(-30 44 14)" fill="#8BAABB"/><rect x="10" y="44" width="20" height="20" transform="rotate(40 20 54)" fill="#182D3D"/></g><path d="M50 60 L70 60" stroke="#182D3D" stroke-width="1.5"/><g><rect x="76" y="48" width="20" height="20" fill="#182D3D"/><rect x="98" y="48" width="20" height="20" fill="#46758E"/><rect x="76" y="70" width="20" height="20" fill="#8BAABB"/><rect x="98" y="70" width="20" height="20" fill="#182D3D"/></g></svg>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns:minmax(0,728px);margin-top:16px"><span class="m lbl">728 × 90 leaderboard set</span>
+    <div class="ad" style="background:#fff;border:1px solid var(--frost);height:90px;flex-direction:row;align-items:center"><span class="wm" style="font-size:16px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span><span style="font-weight:500;letter-spacing:-.02em">Less admin. More growth.</span><span class="btn">Learn more</span></div>
+    <div class="ad" style="background:var(--steel);color:#fff;height:90px;flex-direction:row;align-items:center"><span class="m">Free download</span><span style="font-weight:500;font-size:18px;letter-spacing:-.02em">The Automation Starter Kit</span><span class="btn w">Get it</span></div>
+    <div class="ad" style="background:var(--deep);color:#fff;height:90px;flex-direction:row;align-items:center"><span style="font-family:var(--mono);font-size:28px;letter-spacing:-.05em">45 min</span><span style="font-size:14px">to map your growth system</span><span class="btn">Book</span></div>
+  </div>
+</section>
+
+<!-- 12/13 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>12–13 / Proposal &amp; workbook</div><h2>Documents as systems.</h2><p>The proposal cover maps the engagement as a module grid. The workbook uses the "resolve" device to show progress from overwhelm to order.</p></div>
+  <div class="docs">
+    <div class="doc gridbg-d" style="color:#fff">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="wm inv" style="font-size:16px"><svg style="color:var(--steel)"><use href="#mk"/></svg>ten forty five</span><span class="m" style="color:var(--sky)">Proposal / TFF-2026-018</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:70%"><i style="aspect-ratio:1;background:var(--steel)"></i><i style="aspect-ratio:1;background:var(--sky)"></i><i style="aspect-ratio:1;border:1px solid var(--sky)"></i><i style="aspect-ratio:1;border:1px solid var(--sky)"></i><i style="aspect-ratio:1;background:#fff"></i><i style="aspect-ratio:1;background:var(--steel)"></i><i style="aspect-ratio:1;background:var(--sky)"></i><i style="aspect-ratio:1;border:1px solid var(--sky)"></i></div>
+      <div><span class="m" style="color:var(--sky)">Prepared for Brightline Logistics</span><h2 style="font-size:44px;margin-top:12px">Growth systems<br>roadmap</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-top:1px solid rgba(139,170,187,.4)" class="m"><span style="padding-top:8px;color:var(--sky)">01 Audit</span><span style="padding-top:8px;color:var(--sky)">02 Build</span><span style="padding-top:8px;color:var(--sky)">03 Scale</span></div></div>
+    </div>
+    <div class="doc" style="background:#fff">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="wm" style="font-size:16px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span><span class="m lbl">Workbook 02</span></div>
+      <svg viewBox="0 0 200 110" style="width:100%" aria-hidden="true"><g><rect x="8" y="20" width="18" height="18" fill="#8BAABB" transform="rotate(22 17 29)"/><rect x="34" y="60" width="18" height="18" fill="#46758E" transform="rotate(-30 43 69)"/><rect x="20" y="86" width="18" height="18" fill="#182D3D" transform="rotate(12 29 95)"/><rect x="62" y="30" width="18" height="18" fill="#182D3D" transform="rotate(-14 71 39)"/><rect x="88" y="66" width="18" height="18" fill="#8BAABB" transform="rotate(8 97 75)"/></g><g><rect x="130" y="40" width="18" height="18" fill="#182D3D"/><rect x="150" y="40" width="18" height="18" fill="#46758E"/><rect x="170" y="40" width="18" height="18" fill="#8BAABB"/><rect x="130" y="60" width="18" height="18" fill="#46758E"/><rect x="150" y="60" width="18" height="18" fill="#8BAABB"/><rect x="170" y="60" width="18" height="18" fill="#182D3D"/></g><line x1="110" y1="60" x2="124" y2="60" stroke="#46758E"/></svg>
+      <div><h2 style="font-size:40px">The small business<br>automation workbook</h2><p style="color:#4b6677;margin-top:12px">Map, simplify and automate the five tasks that eat your week.</p></div>
+      <div class="m lbl" style="display:flex;justify-content:space-between"><span>5 systems · 30 pages</span><span>tenfortyfive.co/kit</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section>
+  <div class="sh"><div class="id m"><i></i>14 / Website hero</div><h2>The system, live.</h2><p>The hero animates the core device: modules drift in, then click into the grid as the headline lands. Below it, the services read as a three-step operating model.</p></div>
+  <div class="browser">
+    <div class="chrome"><i></i><i></i><i></i><span>tenfortyfive.co</span></div>
+    <div class="site">
+      <nav><span class="wm" style="font-size:19px"><svg style="color:var(--deep)"><use href="#mk"/></svg>ten forty five</span><ul><li>Strategy</li><li>Digital</li><li>Automation</li><li>Resources</li></ul><span class="btn d">Book a call</span></nav>
+      <div class="hero">
+        <div class="l"><span class="m lbl">Business growth partner</span><h1 style="margin-top:16px">Complex business.<br><span style="color:var(--steel)">Simple systems.</span></h1><p style="margin-top:20px;font-size:17px;color:#4b6677">We sit next to you, not above you, to design the strategy, digital experiences and automation that make growth repeatable.</p><div style="display:flex;gap:10px;margin-top:28px;flex-wrap:wrap"><span class="btn d">Map your growth system</span><span class="btn o">See how we work</span></div></div>
+        <div class="r gridbg">
+          <svg viewBox="0 0 320 320" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g>
+            <rect x="40" y="48" width="32" height="32" fill="#8BAABB" transform="rotate(18 56 64)" opacity=".7"/><rect x="100" y="28" width="32" height="32" fill="#46758E" transform="rotate(-26 116 44)" opacity=".7"/><rect x="56" y="112" width="32" height="32" fill="#182D3D" transform="rotate(34 72 128)" opacity=".5"/>
+            <rect x="128" y="128" width="64" height="64" fill="#182D3D"/><rect x="192" y="128" width="32" height="32" fill="#46758E"/><rect x="192" y="160" width="32" height="32" fill="#8BAABB"/><rect x="128" y="192" width="96" height="32" fill="#46758E"/><rect x="224" y="192" width="32" height="32" fill="#182D3D"/>
+            <g stroke="#fff" stroke-width="7" stroke-linecap="square"><line x1="160" y1="160" x2="140" y2="160"/><line x1="160" y1="160" x2="152" y2="149"/></g>
+          </g></svg>
+          <div style="position:absolute;left:24px;right:24px;bottom:20px;display:flex;justify-content:space-between" class="m lbl"><span>01 Strategy</span><span>02 Digital</span><span>03 Automation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section style="border:0">
+  <div class="sh"><div class="id m"><i></i>15 / Usage guidelines</div><h2>Rules of the system.</h2><p>A modular identity only works if the modules are respected. These rules keep every touchpoint consistent and quick to produce.</p></div>
+  <div class="rules">
+    <div class="cell frost"><span class="m lbl">Rule 01 · Grid</span><p>Everything snaps to the 32px module. Margins, image crops and type baselines all sit on it.</p></div>
+    <div class="cell frost"><span class="m lbl">Rule 02 · One diagonal</span><p>45° is the only angle allowed, and it appears once per layout at most. Everything else is orthogonal.</p></div>
+    <div class="cell frost"><span class="m lbl">Rule 03 · Tech, lightly</span><p>Show outcomes (time saved, steps removed), never machinery. No robots, glow, circuitry or neon.</p></div>
+  </div>
+  <div class="dd">
+    <div class="cell"><span class="m lbl">✓ Primary</span><span class="wm only" style="font-size:22px">ten forty five</span></div>
+    <div class="cell"><span class="m" style="color:#9b4a4a">✕ Rounded mark</span><svg width="56" height="56" viewBox="0 0 100 100" style="opacity:.5" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#182D3D"/><g stroke="#fff" stroke-width="9" stroke-linecap="round"><line x1="50" y1="50" x2="18" y2="50"/><line x1="50" y1="50" x2="37" y2="33"/></g></svg></div>
+    <div class="cell"><span class="m" style="color:#9b4a4a">✕ Neon / glow</span><span class="wm only" style="font-size:22px;color:#6ff;text-shadow:0 0 12px #0ff;opacity:.6;background:#0b1620;padding:6px 8px">ten forty five</span></div>
+    <div class="cell"><span class="m" style="color:#9b4a4a">✕ Mark as primary</span><span style="display:flex;gap:10px;align-items:center;opacity:.5"><svg width="44" height="44" style="color:var(--deep)"><use href="#mk"/></svg><span class="m">alone, as logo</span></span></div>
+  </div>
+</section>
+</main>
+
+<footer class="gridbg-d"><div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px"><span class="wm inv" style="font-size:20px"><svg style="color:var(--steel)"><use href="#mk"/></svg>ten forty five</span><span class="m" style="color:var(--sky)">Direction C · Structured Systems · Exploratory palette, not approved</span></div></footer>
+</body>
+</html>
