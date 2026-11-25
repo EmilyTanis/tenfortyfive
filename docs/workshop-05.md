@@ -6,7 +6,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 |---|---|---|
 | 01 | Website's main job | Approved |
 | 02 | Sitemap and navigation | Approved |
-| 03 | Homepage structure | Open |
+| 03 | Homepage structure | Approved |
 | 04 | Pricing page | Open |
 | 05 | Buying get started. / think bigger. | Open |
 | 06 | do it yourself. purchase and delivery | Open |
@@ -53,3 +53,20 @@ Soft-launch menu, five pages, labels kept plain so anyone understands them at a 
 - Added later: **Work** once the landscaping site is live (until then, clearly labeled concept projects may appear on Home); **Shop / Resources** once the do it yourself. products are ready.
 
 **Changes to the draft copy brief:** navigation drops Work, Resources and Contact at launch (Book a call replaces Contact).
+
+## 03: Homepage structure (approved)
+
+Sell the value first, confirm the price second. Within seconds of landing, a visitor should see what we do, how we work and what their business gets out of it. Pricing is visible and honest but is not the homepage's main visual feature.
+
+| # | Section | What it does |
+|---|---|---|
+| 1 | Opening | *your business. our expertise.* plus one plain line on what a business gets from us. **Book a free call**; small "see pricing" text link beneath |
+| 2 | What you get | Outcomes, not services: more customers finding you, a website that does its job, time back from busywork, a clear plan for what to do next (the four Workshop 04 needs, framed as results) |
+| 3 | What we do | Strengths (websites, marketing, AI & business systems), each with 2–3 concrete examples a business owner would recognize. Examples are draft until package contents are confirmed |
+| 4 | How we work | Four steps (tell us what you need → agree on work and price → we do the work → you own the result) plus how it feels: plain language, quick replies, people making the decisions with AI helping |
+| 5 | Why ten forty five | You own everything, no long contracts, clear prices up front |
+| 6 | Pricing | One compact row: four packages and prices, linking to Pricing |
+| 7 | Closing | Book a free call |
+
+- No testimonials or client-logo section until real, permitted proof exists; a Work section is added once the landscaping site is live.
+- FAQ lives on the Pricing page, not the homepage.
