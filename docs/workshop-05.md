@@ -50,7 +50,7 @@ Soft-launch menu, five pages, labels kept plain so anyone understands them at a 
 
 - Footer: Privacy and Terms (required once we take payments or collect form data).
 - Unlisted: one landing page per ad campaign, matching that ad's message.
-- Added later: **Work** once the landscaping site is live (until then, clearly labeled concept projects may appear on Home); **Shop / Resources** once the do it yourself. products are ready.
+- Added later: **Work** once the landscaping site is live. (Updated by decisions 08 and 10: no concept projects at launch; do it yourself. products are on sale from the soft launch and are sold from the Pricing page, so a separate Shop / Resources page is only needed if the range grows.)
 
 **Changes to the draft copy brief:** navigation drops Work, Resources and Contact at launch (Book a call replaces Contact).
 
@@ -206,5 +206,5 @@ Professional help to book this week:
 
 ## Follow-ups from this workshop
 
-- Update `brand/messaging.md` and `website/copy-brief.md`: package definitions (04), "tell us, then pay" (05), client-chosen check-ins (07), CTAs and sitemap (01–02).
+- ~~Update `brand/messaging.md` and `website/copy-brief.md`~~ Done: messaging v1.1, copy brief rewritten to the approved structure, sales playbook fit guidance aligned.
 - Add this record to the ten forty five Google Drive folder.

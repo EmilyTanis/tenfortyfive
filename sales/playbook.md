@@ -17,7 +17,7 @@ Follow-up 2: Hi [name], I'll leave it here for now. If [goal] becomes a priority
 Use accurate sender identity, honor opt-outs, comply with applicable outreach rules including CAN-SPAM for commercial email, and obtain approval before sending. No invented observations or mass spam.
 
 ## Recommend the right fit
-DIY $19–49 for self-directed buyers; get started. $1,500 for one focused solution; think bigger. $3,500 for larger or connected work; let's talk. for unusual, extensive or recurring needs. Examples are not commitments: small website vs larger integrated website; campaign setup vs coordinated marketing project; simple automation vs connected tool. Emily confirms scope, exclusions, timeline, revisions, third-party costs and acceptance criteria before commitment. Fixed price 50/50; no discounts or add-ons without founder decision.
+DIY $19–49 for self-directed buyers (instant checkout). get started. $1,500 when they know the one problem they want solved. think bigger. $3,500 when they know something has to change but not exactly what: a bigger goal, usually several connected problems, starting with a planning step. let's talk. for unusual, extensive or recurring needs. Don't promise specific deliverables in outreach; the deliverable is agreed at scope confirmation. Emily confirms scope, exclusions, timeline, revisions, third-party costs and acceptance criteria before commitment. Fixed price 50/50; no discounts or add-ons without founder decision.
 
 ## Objections (draft)
 Too expensive: Let's look at what you need most and whether a focused project makes sense. We can also point you toward a self-service resource.
