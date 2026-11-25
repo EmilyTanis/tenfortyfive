@@ -97,4 +97,4 @@ Templates (4):
 | Stripe payment links, download pages, test purchases and refunds | Emily + Angelo | Dec 9–14 |
 | On sale | — | **Dec 15** |
 
-Later: a free one-page checklist from one of the products for ads and lead generation, offered without any gate.
+Later: a free one-page checklist from one of the products for ads and lead generation. Open question: whether it asks for an email (useful for lead capture) or stays fully free under the no-gates principle.
