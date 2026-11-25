@@ -7,7 +7,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 01 | Website's main job | Approved |
 | 02 | Sitemap and navigation | Approved |
 | 03 | Homepage structure | Approved |
-| 04 | Pricing page | Open |
+| 04 | Pricing page | In progress |
 | 05 | Buying get started. / think bigger. | Open |
 | 06 | do it yourself. purchase and delivery | Open |
 | 07 | Onboarding after payment | Open |
@@ -70,3 +70,12 @@ Sell the value first, confirm the price second. Within seconds of landing, a vis
 
 - No testimonials or client-logo section until real, permitted proof exists; a Work section is added once the landscaping site is live.
 - FAQ lives on the Pricing page, not the homepage.
+
+## 04: Pricing page (in progress)
+
+Decided so far:
+
+- **Timelines and post-launch support are published** as "typically" ranges, once each package's definition is clear. Review after the first five paid projects, with pricing.
+- **do it yourself. products launch with the site, not after.** Products must be written, branded and purchasable on the website before go-live; they can also be used early in ads and lead generation. Added to the launch scope (decisions 06 and 10).
+
+Open: how to explain the difference between get started. and think bigger. Proposal under review: *get started. = one thing, done well* (one project, one goal, one area); *think bigger. = several things that work together* (two or three connected pieces, or one more complex build).
