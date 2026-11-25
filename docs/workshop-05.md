@@ -10,7 +10,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 04 | Pricing page | Approved |
 | 05 | Buying get started. / think bigger. | Approved |
 | 06 | do it yourself. purchase and delivery | Approved |
-| 07 | Onboarding after payment | Open |
+| 07 | Onboarding after payment | Approved |
 | 08 | Portfolio at launch | Open |
 | 09 | Platform and hosting | Open |
 | 10 | Soft-launch scope | Open |
@@ -122,3 +122,19 @@ No scope to confirm, so **instant checkout**.
 7. **Next step inside each product:** a link to start a get started. project. No discount or upgrade credit (consistent with Workshop 02).
 
 Later: a free mini version (e.g. a one-page checklist) for ads and lead generation, decided when the products are built.
+
+## 07: Onboarding after payment (approved)
+
+Goal: a client never wonders what's happening.
+
+| When | What happens |
+|---|---|
+| Within 1 business day of the first payment | Welcome email: what happens next, timeline, who to contact, what we need from them, link to book the kickoff |
+| Kickoff call | 30 min (get started.) or 60 min (think bigger., includes the planning step). Confirm the goal, how success is measured, dates, and **how the client wants to stay in touch** |
+| Access | The client invites us into their own accounts. Never passwords by email; only the access needed; everything stays in the client's name |
+| Shared folder | One Google Drive folder per client: plan, files, decisions, one-page status sheet |
+| Check-ins | **Set by the client** at kickoff: weekly call, weekly email, or milestone updates only, changeable anytime. Regardless of choice, the status sheet is always current and we reach out whenever we need a decision, and at start, review and handoff |
+| Handoff | Second payment, handoff call, recorded walkthrough, one-page "how to run this yourself" guide |
+| After launch | Support window (7 or 30 days); think bigger. adds the 30-day check-in. Ask for feedback and permission to show the work |
+
+**Changes an earlier decision:** Workshop 02's delivery guidelines specified weekly updates; check-in frequency is now the client's choice.
