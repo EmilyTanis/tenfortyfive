@@ -8,12 +8,12 @@ Three creative directions, built from the master brief in [`brief/`](brief/brand
 
 | | Direction | Board | Preview |
 |---|---|---|---|
-| **Selected** | **A, refined: Modern Consultancy with editorial accents** | [`a-refined.html`](brand-mockups/a-refined.html) | [full board](brand-mockups/previews/a-refined.jpg) |
+| **Approved v1.0** | **A, refined: Modern Consultancy with editorial accents** | [`a-refined.html`](brand-mockups/a-refined.html) | [full board](brand-mockups/previews/a-refined.jpg) |
 | A | The Modern Consultancy | [`a-modern-consultancy.html`](brand-mockups/a-modern-consultancy.html) | [full board](brand-mockups/previews/a-modern-consultancy.jpg) |
 | B | Editorial Intelligence | [`b-editorial-intelligence.html`](brand-mockups/b-editorial-intelligence.html) | [full board](brand-mockups/previews/b-editorial-intelligence.jpg) |
 | C | Structured Systems | [`c-structured-systems.html`](brand-mockups/c-structured-systems.html) | [full board](brand-mockups/previews/c-structured-systems.jpg) |
 
-**Selected direction:** A, refined. It keeps A's grid, palette and wordmark and adds B's serif-italic accent (Instrument Serif, one phrase per layout), statement-led social covers and a pull-quote device.
+**Approved identity (v1.0):** A, refined. See [`BRAND.md`](BRAND.md) for the locked specification. It keeps A's grid, palette and wordmark and adds B's serif-italic accent (Instrument Serif, one phrase per layout), statement-led social covers and a pull-quote device.
 
 Start at [`brand-mockups/index.html`](brand-mockups/index.html) for the side-by-side comparison and recommendation.
 
@@ -28,6 +28,6 @@ The boards are self-contained HTML files. Open them in a browser; they load font
 
 ### Notes
 
-- Palettes are exploratory, as given in the brief, and not yet approved.
+- Direction A, refined, and its palette are approved. Directions A, B and C are kept as the original explorations.
 - Photography panels are tonal and compositional studies, not final imagery.
 - Names, clients and figures in the mockups are placeholders.
