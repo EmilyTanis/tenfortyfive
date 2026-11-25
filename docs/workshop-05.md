@@ -185,14 +185,16 @@ Pre-formation expenses (e.g. the domain) may be paid personally and recorded as 
 Professional help to book this week:
 - **Attorney:** founder agreement (ownership, IP, roles, exit), client project contract template, Privacy and Terms.
 - **Accountant:** decision 09 tax questions; how a two-member LLC is taxed.
-- **Both founders:** confirm employer policies on side businesses and IP.
+- **Employer policies:** confirmed by the founders on Nov 25, no conflict.
+
+**Owner: Angelo leads the LLC setup** (name check, registered agent, filing, EIN, bank account, Stripe), with joint decisions on name, ownership split and registered agent. Use a registered agent service and a non-home mailing address so the founders' home address stays off the public record. Store formation documents in a restricted Drive folder, never in GitHub.
 
 ### Timeline
 
 | Week | Emily | Angelo | Together / outside help |
 |---|---|---|---|
-| Nov 25 – Dec 1 | Outline the 3 products; start building the website | Research and outreach drafts | File LLC, EIN, buy domain; book attorney and accountant; Dec 1 review |
-| Dec 2–8 | Finish the website; write product 1 | HubSpot, booking, business email | Bank account → Stripe → NJ sales tax; attorney drafts contract, Privacy, Terms |
+| Nov 25 – Dec 1 | Outline the 3 products; start building the website; book attorney and accountant | Research and outreach drafts; **file LLC and get EIN** | Name, ownership split, registered agent decided by Nov 30; buy domain; Dec 1 review |
+| Dec 2–8 | Finish the website; write product 1 | **Bank account (by Dec 5) → Stripe (by Dec 8)**; HubSpot, booking, business email | Attorney drafts operating agreement, contract, Privacy, Terms; NJ sales tax after accountant confirms |
 | Dec 9–14 | Write and design products 2–3; onboarding templates | Test the whole flow incl. a test purchase | Approve contract and legal pages; landscaping kickoff |
 | **Dec 15 soft launch** | Site live with products on sale | Outreach starts | |
 | Dec 15 – Jan 4 | Landscaping build and handoff; ad creative from the products | Follow-ups; one booked meeting a week | |
