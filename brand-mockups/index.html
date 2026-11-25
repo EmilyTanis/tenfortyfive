@@ -26,12 +26,15 @@ a.dir:hover{border-color:var(--muted);transform:translateY(-2px)}
 .chips{display:flex;margin-top:auto;padding-top:12px}
 .chips i{flex:1;height:18px}
 .go{font-weight:500;font-size:14px;margin-top:12px}
+a.feat{display:grid;grid-template-columns:1fr 1.2fr;margin-top:48px;text-decoration:none;color:inherit;border:1px solid #52788F;transition:transform .2s}
+a.feat:hover{transform:translateY(-2px)}
+a.feat .sw{height:100%;min-height:240px}
 .rec{background:var(--panel);padding:32px;margin-bottom:64px;display:grid;grid-template-columns:200px 1fr;gap:24px}
 .rec p{max-width:70ch}
 table{width:100%;border-collapse:collapse;margin-bottom:64px;font-size:14px}
 th,td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-weight:500}
-@media (max-width:900px){.wrap{padding:0 16px}.dirs,.rec{grid-template-columns:1fr}header h1{font-size:38px}.tbl{overflow-x:auto}}
+@media (max-width:900px){a.feat{grid-template-columns:1fr}.wrap{padding:0 16px}.dirs,.rec{grid-template-columns:1fr}header h1{font-size:38px}.tbl{overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -42,7 +45,15 @@ th{font-weight:500}
 </div></header>
 
 <main class="wrap">
-  <div class="dirs">
+  <a class="feat" href="a-refined.html">
+    <div class="sw" style="background:#142C3B;font-family:'Inter Tight';font-weight:600;letter-spacing:-.045em;flex-direction:column;gap:10px">
+      <span>ten forty five<span style="display:inline-block;width:6px;height:6px;background:#A9BDC9;margin-left:2px"></span></span>
+      <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:20px;letter-spacing:0;color:#A9BDC9">we sit next to you, not above you.</span>
+    </div>
+    <div class="info"><span class="mono">Selected · Direction A, refined</span><h2>The Modern Consultancy, with editorial accents</h2><p>A's grid, palette and wordmark stay at the core. From B it adds a serif-italic accent (one phrase per layout), statement-led social covers and a pull-quote device for client voices.</p><span class="go">Open refined board →</span></div>
+  </a>
+  <h3 class="mono" style="margin-top:56px">Original explorations</h3>
+  <div class="dirs" style="padding-top:16px">
     <a class="dir" href="a-modern-consultancy.html">
       <div class="sw" style="background:#142C3B;font-family:'Inter Tight';font-weight:600;letter-spacing:-.045em">ten forty five<span style="display:inline-block;width:6px;height:6px;background:#A9BDC9;margin-left:2px"></span></div>
       <div class="info"><span class="mono">Direction A</span><h2>The Modern Consultancy</h2><p>Swiss-rooted, grid-led, typography as hero. Alignment rules and progress bars. The most credible of the three, and it scales easily to sophisticated clients.</p>
@@ -72,8 +83,8 @@ th{font-weight:500}
   </table></div>
 
   <div class="rec">
-    <span class="mono">Recommendation</span>
-    <p>Following the brief's starting preference, lead with <b>A · The Modern Consultancy</b> as the core system (wordmark, grid and palette) and borrow <b>B's</b> serif-italic moments and statement-led social templates to add personality. <b>C's</b> 10:45 clock mark and "resolve" device are worth keeping in reserve for the automation service line and digital products.</p>
+    <span class="mono">Decision</span>
+    <p>Direction A, refined, is the selected route. As the brief suggested, it leads with <b>A · The Modern Consultancy</b> as the core system (wordmark, grid and palette) and borrows <b>B's</b> serif-italic moments and statement-led social templates to add personality. <b>C's</b> 10:45 clock mark and "resolve" device are worth keeping in reserve for the automation service line and digital products.</p>
   </div>
 </main>
 </body>
