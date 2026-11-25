@@ -7,7 +7,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 01 | Website's main job | Approved |
 | 02 | Sitemap and navigation | Approved |
 | 03 | Homepage structure | Approved |
-| 04 | Pricing page | In progress |
+| 04 | Pricing page | Approved |
 | 05 | Buying get started. / think bigger. | Open |
 | 06 | do it yourself. purchase and delivery | Open |
 | 07 | Onboarding after payment | Open |
@@ -71,11 +71,27 @@ Sell the value first, confirm the price second. Within seconds of landing, a vis
 - No testimonials or client-logo section until real, permitted proof exists; a Work section is added once the landscaping site is live.
 - FAQ lives on the Pricing page, not the homepage.
 
-## 04: Pricing page (in progress)
-
-Decided so far:
+## 04: Pricing page (approved)
 
 - **Timelines and post-launch support are published** as "typically" ranges, once each package's definition is clear. Review after the first five paid projects, with pricing.
 - **do it yourself. products launch with the site, not after.** Products must be written, branded and purchasable on the website before go-live; they can also be used early in ads and lead generation. Added to the launch scope (decisions 06 and 10).
 
-Open: how to explain the difference between get started. and think bigger. Proposal under review: *get started. = one thing, done well* (one project, one goal, one area); *think bigger. = several things that work together* (two or three connected pieces, or one more complex build).
+### Package definitions
+
+Packages are defined by **the size of the goal and how deep we go**, not by a list of deliverables. The specific deliverable is agreed with the client at the start (the scope-confirmation step approved in Workshop 02). Competitor tiers are mostly sized by pages, channels or features, or sold as monthly retainers; fixed-price packages sized by the problem, with public prices and no contract, are our differentiator.
+
+| | **get started.** ($1,500) | **think bigger.** ($3,500) |
+|---|---|---|
+| The goal | Solve **one problem** | Reach **a bigger goal**, usually several connected problems |
+| The question it answers | "What's the one thing holding us back right now?" | "What would it take to really move this forward?" |
+| How we start | Short call to agree the one thing, then straight to work | A **planning step** first: look at the business, decide what matters most, build to that plan |
+| What you get | One finished result that works on its own | Several connected pieces built to work together, plus the plan behind them |
+| Timeline | Typically 2–3 weeks | Typically 3–5 weeks |
+| Changes | 2 rounds | 3 rounds |
+| After launch | 7 days of support | 30 days of support plus a check-in on how it's working |
+
+- How a customer chooses: "I know what I need" → get started.; "I know something has to change but not exactly what" → think bigger.
+- No specific example projects on the website at launch. Examples are added from real completed projects.
+- Internal check: think bigger.'s planning step (~2–3h) and check-in (~1h) fit inside the 20–25 hour budget but tighten it. Hour budgets stay internal and are reviewed with pricing after five paid projects.
+
+**Follow-up for `brand/messaging.md`:** add the planning step and 30-day check-in to think bigger. and the "one problem / bigger goal" definitions. Existing package descriptions are compatible.
