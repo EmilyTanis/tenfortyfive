@@ -1,0 +1,13 @@
+/* ten forty five brand fonts, loaded from the kit's /fonts folder (SIL Open Font License).
+   Online alternative: https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap */
+@font-face{font-family:"Inter Tight";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/InterTight-Regular.ttf") format("truetype")}
+@font-face{font-family:"Inter Tight";font-weight:500;font-style:normal;font-display:swap;src:url("../fonts/InterTight-Medium.ttf") format("truetype")}
+@font-face{font-family:"Inter Tight";font-weight:600;font-style:normal;font-display:swap;src:url("../fonts/InterTight-SemiBold.ttf") format("truetype")}
+@font-face{font-family:"Inter Tight";font-weight:700;font-style:normal;font-display:swap;src:url("../fonts/InterTight-Bold.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/Inter-Regular.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-weight:500;font-style:normal;font-display:swap;src:url("../fonts/Inter-Medium.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url("../fonts/Inter-SemiBold.ttf") format("truetype")}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/IBMPlexMono-Regular.ttf") format("truetype")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-style:normal;font-display:swap;src:url("../fonts/IBMPlexMono-Medium.ttf") format("truetype")}
+@font-face{font-family:"Instrument Serif";font-weight:400;font-style:italic;font-display:swap;src:url("../fonts/InstrumentSerif-Italic.ttf") format("truetype")}
+@font-face{font-family:"Instrument Serif";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/InstrumentSerif-Regular.ttf") format("truetype")}

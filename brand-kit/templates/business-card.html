@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Business Card Template</title>
+<link rel="stylesheet" href="../tokens/fonts.css">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="_stage.css">
+<style>
+/* 85 x 55 mm at 96dpi ~ 321 x 208px; shown at 2x. Print size: 85 x 55 mm + 3 mm bleed. */
+.card{width:642px;height:416px;padding:48px;display:flex;flex-direction:column;justify-content:space-between}
+.front{background:var(--tff-midnight);color:#fff}
+.back{background:#fff}
+.name{font-family:var(--tff-font-display);font-weight:600;font-size:40px;letter-spacing:-.025em}
+.role{margin-top:8px;color:var(--tff-steel)}
+.details{font-family:var(--tff-font-mono);font-size:19px;line-height:1.7}
+</style></head><body>
+<div><p class="spec">Front · 85 × 55 mm · 600gsm uncoated, midnight core</p>
+<div class="canvas card front">
+  <img class="logo" src="../logos/svg/tff-wordmark-reverse.svg" alt="ten forty five" style="width:300px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <span class="tff-accent" style="font-size:34px;color:var(--tff-mist);line-height:1.1">we sit next to you,<br>not above you.</span>
+    <span class="tff-progress" style="width:120px;height:8px"></span>
+  </div>
+</div></div>
+<div><p class="spec">Back · edit name, role and details</p>
+<div class="canvas card back">
+  <div><div class="name">Jordan Avery</div><div class="role tff-label" style="font-size:19px">Growth Partner</div></div>
+  <div class="details">jordan@tenfortyfive.co<br>+1 (555) 010 1045<br>tenfortyfive.co</div>
+</div></div>
+</body></html>

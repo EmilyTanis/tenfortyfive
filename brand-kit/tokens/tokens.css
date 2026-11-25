@@ -1,0 +1,45 @@
+/* ten forty five brand tokens v1.0. Import fonts.css first (or the Google Fonts link inside it). */
+:root{
+  /* colour */
+  --tff-midnight:#142C3B; --tff-steel:#52788F; --tff-mist:#A9BDC9; --tff-cloud:#EDF2F5; --tff-white:#FFFFFF;
+  --tff-text:var(--tff-midnight); --tff-text-2:var(--tff-steel);
+  --tff-text-on-dark:var(--tff-white); --tff-text-on-dark-2:var(--tff-mist);
+  --tff-bg:var(--tff-white); --tff-surface:var(--tff-cloud); --tff-inverse:var(--tff-midnight); --tff-accent:var(--tff-steel);
+
+  /* type */
+  --tff-font-display:"Inter Tight","Inter",system-ui,sans-serif;
+  --tff-font-body:"Inter",system-ui,sans-serif;
+  --tff-font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --tff-font-accent:"Instrument Serif",Georgia,serif;
+  --tff-size-display:76px; --tff-size-h1:56px; --tff-size-h2:40px; --tff-size-h3:28px;
+  --tff-size-body-lg:17px; --tff-size-body:15px; --tff-size-label:11px;
+  --tff-track-wordmark:-.045em; --tff-track-display:-.04em; --tff-track-heading:-.025em; --tff-track-label:.08em;
+
+  /* space and layout */
+  --tff-space-1:4px; --tff-space-2:8px; --tff-space-3:12px; --tff-space-4:16px; --tff-space-5:20px;
+  --tff-space-6:24px; --tff-space-8:32px; --tff-space-10:40px; --tff-space-12:48px; --tff-space-16:64px; --tff-space-24:96px;
+  --tff-columns:12; --tff-gutter:20px; --tff-margin:40px; --tff-max-width:1280px;
+  --tff-radius:0;
+  --tff-hairline:1px solid var(--tff-cloud);
+  --tff-hairline-dark:1px solid rgba(169,189,201,.35);
+  --tff-shadow-object:0 30px 60px -30px rgba(20,44,59,.35);
+}
+@media (max-width:900px){:root{--tff-margin:16px;--tff-size-display:44px;--tff-size-h1:38px;--tff-size-h2:30px}}
+
+/* helpers */
+.tff-wordmark{font-family:var(--tff-font-display);font-weight:600;letter-spacing:var(--tff-track-wordmark);line-height:1;white-space:nowrap;text-transform:lowercase}
+.tff-wordmark .tff-dot{display:inline-block;width:.16em;height:.16em;background:var(--tff-steel);margin-left:.06em}
+.tff-on-dark .tff-wordmark .tff-dot{background:var(--tff-mist)}
+.tff-display,.tff-h1,.tff-h2,.tff-h3{font-family:var(--tff-font-display);font-weight:600;text-wrap:balance}
+.tff-display{font-size:var(--tff-size-display);letter-spacing:-.045em;line-height:1}
+.tff-h1{font-size:var(--tff-size-h1);letter-spacing:var(--tff-track-display);line-height:1.02}
+.tff-h2{font-size:var(--tff-size-h2);letter-spacing:var(--tff-track-heading);line-height:1.05}
+.tff-h3{font-size:var(--tff-size-h3);letter-spacing:var(--tff-track-heading);line-height:1.1}
+.tff-body{font-family:var(--tff-font-body);font-size:var(--tff-size-body);line-height:1.6}
+.tff-label{font-family:var(--tff-font-mono);font-size:var(--tff-size-label);letter-spacing:var(--tff-track-label);text-transform:uppercase}
+.tff-accent{font-family:var(--tff-font-accent);font-style:italic;font-weight:400;letter-spacing:-.01em}
+:where(.tff-display,.tff-h1,.tff-h2,.tff-h3) .tff-accent{font-size:1.1em;line-height:.9}
+.tff-btn{display:inline-block;font-family:var(--tff-font-display);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:12px 20px;border-radius:0;background:var(--tff-midnight);color:var(--tff-white);text-decoration:none}
+.tff-btn--secondary{background:transparent;color:var(--tff-midnight);box-shadow:inset 0 0 0 1px var(--tff-midnight)}
+.tff-btn--light{background:var(--tff-white);color:var(--tff-midnight)}
+.tff-progress{display:block;height:6px;background:var(--tff-steel)}

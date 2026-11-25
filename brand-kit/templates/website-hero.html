@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Website Hero Template</title>
+<link rel="stylesheet" href="../tokens/fonts.css">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tff-bg);color:var(--tff-text);font-family:var(--tff-font-body)}
+.wrap{max-width:var(--tff-max-width);margin:0 auto;padding:0 var(--tff-margin)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:var(--tff-hairline)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
+nav a{color:inherit;text-decoration:none}
+.hero{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--tff-gutter);padding:96px 0 0}
+.hero>*{grid-column:1/-1}
+.hero h1{grid-column:1/10;font-size:clamp(44px,7vw,88px);letter-spacing:-.045em;line-height:1}
+.hero p{grid-column:1/7;font-size:var(--tff-size-body-lg);color:var(--tff-text-2);margin-top:24px;line-height:1.55}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:80px 0 96px;border-top:1px solid var(--tff-midnight)}
+.stats div{padding:20px 20px 0 0}
+.stats b{display:block;font-family:var(--tff-font-display);font-size:44px;font-weight:600;letter-spacing:-.04em}
+@media (max-width:900px){nav ul{display:none}.hero h1,.hero p{grid-column:1/-1}.stats{grid-template-columns:1fr 1fr;row-gap:24px}}
+</style></head><body>
+<div class="wrap">
+  <nav><a href="#"><img src="../logos/svg/tff-wordmark-primary.svg" alt="ten forty five" style="width:150px;display:block"></a>
+    <ul><li><a href="#">Services</a></li><li><a href="#">Approach</a></li><li><a href="#">Work</a></li><li><a href="#">Resources</a></li></ul>
+    <a class="tff-btn" href="#">Book a call</a></nav>
+  <section class="hero">
+    <span class="tff-label" style="color:var(--tff-steel)">Business growth partner</span>
+    <h1 class="tff-display">We sit next to you, <span class="tff-accent" style="color:var(--tff-steel)">not above you.</span></h1>
+    <p>Marketing strategy, digital experiences and automation, delivered like an in-house team that already understands your business.</p>
+    <div class="cta"><a class="tff-btn" href="#">Start with a growth call</a><a class="tff-btn tff-btn--secondary" href="#">Free resources</a></div>
+  </section>
+  <div class="stats">
+    <div><b>45 min</b><span class="tff-label" style="color:var(--tff-steel)">First strategy session</span></div>
+    <div><b>3.1×</b><span class="tff-label" style="color:var(--tff-steel)">Avg. lead growth</span></div>
+    <div><b>−32%</b><span class="tff-label" style="color:var(--tff-steel)">Wasted ad spend</span></div>
+    <div><b>1 team</b><span class="tff-label" style="color:var(--tff-steel)">Yours, extended</span></div>
+  </div>
+</div>
+</body></html>

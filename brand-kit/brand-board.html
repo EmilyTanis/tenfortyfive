@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modern Consultancy Refined</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#142C3B; --steel:#52788F; --mist:#A9BDC9; --cloud:#EDF2F5; --white:#FFFFFF;
+  --ink:#142C3B; --muted:#52788F; --rule:#A9BDC9; --bg:#FFFFFF; --panel:#EDF2F5;
+  --display:"Inter Tight",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.025em;line-height:1.05}
+p{max-width:62ch}
+.s{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+h1 .s,h2 .s,h3 .s{font-size:1.1em;line-height:.9}
+
+/* ---------- wordmark ---------- */
+.wm{font-family:var(--display);font-weight:600;letter-spacing:-.045em;line-height:1;display:inline-flex;align-items:baseline;gap:.02em;white-space:nowrap}
+.wm .dot{display:inline-block;width:.16em;height:.16em;background:var(--steel);margin-left:.06em}
+.wm.inv{color:var(--white)} .wm.inv .dot{background:var(--mist)}
+.stack{font-family:var(--display);font-weight:600;letter-spacing:-.04em;line-height:.92;display:inline-grid;grid-template-columns:auto auto;column-gap:.32em;align-items:start}
+.stack .bar{grid-row:1/4;width:.09em;background:var(--steel);height:100%}
+.mark{width:96px;height:96px;background:var(--midnight);display:grid;place-items:center;position:relative}
+.mark span{font-family:var(--display);font-weight:600;color:#fff;font-size:44px;letter-spacing:-.05em;line-height:1;transform:translateY(-4px)}
+.mark::after{content:"";position:absolute;left:22px;right:22px;bottom:20px;height:5px;background:linear-gradient(90deg,var(--mist) 0 72%,rgba(169,189,201,.3) 72%)}
+
+/* ---------- layout ---------- */
+header.cover{background:var(--midnight);color:#fff;padding:36px 0 0;position:relative;overflow:hidden}
+.cover .top{display:flex;justify-content:space-between;color:var(--mist)}
+.cover .hero{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;padding:120px 0 64px}
+.cover .hero .wm{grid-column:1/-1;font-size:clamp(56px,11vw,150px)}
+.cover .hero p{grid-column:1/6;color:var(--mist);font-size:17px;margin-top:32px}
+.cover .hero .meta{grid-column:8/-1;margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px;color:var(--mist)}
+.cover .hero .meta b{display:block;color:#fff;font-family:var(--display);font-weight:500;font-size:15px;text-transform:none;letter-spacing:0;margin-top:4px}
+.ruler{display:grid;grid-template-columns:repeat(12,1fr);border-top:1px solid rgba(169,189,201,.35)}
+.ruler i{height:18px;border-left:1px solid rgba(169,189,201,.35)}
+.ruler i:nth-child(3n+1){height:28px}
+
+section{padding:96px 0;border-bottom:1px solid var(--cloud)}
+.sh{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-bottom:48px;align-items:end}
+.sh .n{grid-column:1/3;color:var(--steel)}
+.sh h2{grid-column:3/8;font-size:40px}
+.sh p{grid-column:8/-1;color:var(--muted);font-size:14px}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.tile{background:var(--panel);padding:32px;position:relative;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.tile.dark{background:var(--midnight);color:#fff}
+.tile.steel{background:var(--steel);color:#fff}
+.tile.white{background:#fff;border:1px solid var(--cloud)}
+.cap{color:var(--muted);margin-top:16px}
+.tile.dark .cap,.tile.steel .cap{color:var(--mist)}
+
+/* 01 */
+.primary{background:#fff;border:1px solid var(--cloud);height:380px;display:grid;place-items:center;position:relative}
+.primary .wm{font-size:clamp(48px,9vw,112px)}
+.primary .guides{position:absolute;inset:0;pointer-events:none}
+.primary .guides::before,.primary .guides::after{content:"";position:absolute;left:0;right:0;border-top:1px dashed var(--mist)}
+.primary .guides::before{top:calc(50% - 40px)}.primary .guides::after{top:calc(50% + 28px)}
+.anno{position:absolute;color:var(--steel)}
+/* 04 */
+.sw{height:240px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--mono);font-size:12px}
+.sw b{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.01em}
+.swgrid{grid-template-columns:2fr 1.4fr 1fr 1fr 1fr}
+.ratio{display:flex;height:28px;margin-top:20px}
+/* 05 */
+.type-spec{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.specimen{font-family:var(--display);font-size:120px;font-weight:600;letter-spacing:-.05em;line-height:.9}
+.scale div{display:grid;grid-template-columns:90px 1fr;align-items:baseline;border-top:1px solid var(--cloud);padding:14px 0}
+/* 06 patterns */
+.pat{height:260px;position:relative;overflow:hidden}
+.pat-rules{background:repeating-linear-gradient(90deg,transparent 0 31px,rgba(82,120,143,.35) 31px 32px),var(--cloud)}
+.pat-progress{background:var(--midnight);padding:32px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.pat-progress i{display:block;height:8px;background:var(--steel)}
+.pat-ticks{background:#fff;border:1px solid var(--cloud)}
+.pat-ticks svg{position:absolute;inset:0;width:100%;height:100%}
+/* 07 photo */
+.ph{aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px;color:#fff}
+.ph .scene{position:absolute;inset:0}
+.ph .lbl{position:relative;z-index:2}
+/* 08 cards */
+.cardstage{background:var(--cloud);padding:64px;display:flex;gap:40px;justify-content:center;align-items:center;flex-wrap:wrap}
+.bcard{width:350px;height:200px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 1px rgba(20,44,59,.06),0 18px 40px -18px rgba(20,44,59,.35)}
+.bcard.f{background:var(--midnight);color:#fff;transform:rotate(-3deg)}
+.bcard.b{background:#fff;transform:rotate(2deg)}
+/* 09 IG */
+.ig{aspect-ratio:1/1;padding:28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.ig h3{font-size:30px}
+.ig .pager{display:flex;gap:4px}.ig .pager i{flex:1;height:3px;background:currentColor;opacity:.25}.ig .pager i.on{opacity:1}
+/* 10 LinkedIn */
+.li{background:#fff;border:1px solid #dfe5ea;border-radius:8px;overflow:hidden;font-family:system-ui,sans-serif}
+.li .hd{display:flex;gap:10px;padding:14px;align-items:center;font-size:13px}
+.li .av{width:40px;height:40px;background:var(--midnight);display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.04em}
+.li .body{padding:0 14px 12px;font-size:13px;color:#333}
+.li .img{aspect-ratio:1.91/1;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.li .ft{padding:10px 14px;border-top:1px solid #eef1f3;font-size:12px;color:#666}
+/* 11 ads */
+.ads{display:grid;grid-template-columns:300px 1fr 200px;gap:20px;align-items:start}
+.ad{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:20px}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:13px;padding:10px 16px;background:var(--steel);color:#fff;letter-spacing:-.01em}
+.btn.light{background:#fff;color:var(--midnight)}
+/* 12/13 covers */
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--cloud);padding:64px}
+.doc{aspect-ratio:1/1.414;padding:40px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px -30px rgba(20,44,59,.45)}
+/* 14 web */
+.browser{border:1px solid var(--cloud);box-shadow:0 30px 80px -40px rgba(20,44,59,.4)}
+.chrome{height:36px;background:var(--cloud);display:flex;align-items:center;gap:6px;padding:0 14px}
+.chrome i{width:10px;height:10px;border-radius:50%;background:var(--mist)}
+.chrome .url{margin-left:20px;background:#fff;height:20px;flex:0 0 280px;font-family:var(--mono);font-size:10px;line-height:20px;padding:0 10px;color:var(--steel)}
+.site nav{display:flex;justify-content:space-between;align-items:center;padding:22px 48px;border-bottom:1px solid var(--cloud)}
+.site nav ul{display:flex;gap:28px;list-style:none;font-size:13px;font-weight:500}
+.site .h{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;padding:88px 48px 0}
+.site .h h1{grid-column:1/9;font-size:76px;letter-spacing:-.045em}
+.site .h h1 em{font-size:1.1em;font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--steel)}
+.site .h p{grid-column:1/6;font-size:17px;color:var(--muted);margin-top:24px}
+.site .h .cta{grid-column:1/-1;display:flex;gap:12px;margin-top:32px}
+.site .stats{display:grid;grid-template-columns:repeat(4,1fr);margin:72px 48px 0;border-top:1px solid var(--midnight)}
+.site .stats div{padding:20px 20px 40px 0}
+.site .stats b{font-family:var(--display);font-size:40px;font-weight:600;letter-spacing:-.04em;display:block}
+/* 15 */
+.rules li{list-style:none;border-top:1px solid var(--cloud);padding:14px 0;display:grid;grid-template-columns:40px 1fr;font-size:14px}
+.dd{height:140px;display:grid;place-items:center;border:1px solid var(--cloud);position:relative}
+.dd .x{position:absolute;top:10px;left:12px}
+footer{background:var(--midnight);color:var(--mist);padding:48px 0}
+
+@media (max-width:900px){
+  .wrap{padding:0 16px}
+  .g2,.g3,.g4,.type-spec,.ads,.covers{grid-template-columns:1fr}
+  .sh h2,.sh p,.sh .n,.cover .hero p,.cover .hero .meta{grid-column:1/-1}
+  .covers,.cardstage{padding:24px}
+  .specimen{font-size:72px}
+  .site .h h1{font-size:40px;grid-column:1/-1}.site .h p{grid-column:1/-1}
+  .site nav ul{display:none}.site .h,.site nav{padding-left:20px;padding-right:20px}.site .stats{margin:40px 20px 0;grid-template-columns:1fr 1fr}
+  .bcard{width:100%;max-width:350px}
+  .swgrid{grid-template-columns:1fr 1fr}.sw{height:160px}
+  .ad{width:100%!important;max-width:300px;height:auto!important;min-height:250px;flex-direction:column!important;align-items:flex-start!important}.ad h3{font-size:26px!important}
+  .cover .hero .meta{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="top mono"><span>Brand identity · Approved direction</span><span>Approved · v1.0 · November 2026</span></div>
+    <div class="hero">
+      <div class="wm inv">ten forty five<span class="dot"></span></div>
+      <p>The Modern Consultancy, refined. A's Swiss grid, calm steel palette and wordmark stay at the core. From Editorial Intelligence it borrows a second voice: a serif italic that appears once per layout, <span class="s" style="color:#fff;font-size:20px">where the brand wants to sound human.</span></p>
+      <div class="meta mono">
+        <div>Direction<b>A, with B's accents</b></div>
+        <div>Mood<b>Clarity, credibility, precision</b></div>
+        <div>Influences<b>Swiss design, editorial publishing</b></div>
+        <div>Devices<b>Rules, progress bars, the italic aside</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><div class="ruler"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+</header>
+
+<main class="wrap">
+
+<!-- 01 -->
+<section>
+  <div class="sh"><span class="n mono">01 / Primary wordmark</span><h2>Lowercase, set tight, built on a baseline.</h2><p>Inter Tight Semibold at −4.5% tracking. The square full stop is the brand's only ornament: a precise, finished point. It signals "done properly."</p></div>
+  <div class="primary">
+    <div class="guides"></div>
+    <div class="wm">ten forty five<span class="dot"></span></div>
+    <span class="anno mono" style="top:16px;left:20px">x-height</span>
+    <span class="anno mono" style="bottom:16px;left:20px">Clear space = height of "t"</span>
+    <span class="anno mono" style="bottom:16px;right:20px">Min. width 96px / 25mm</span>
+  </div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sh"><span class="n mono">02 / Secondary &amp; compact marks</span><h2>One system, three sizes.</h2><p>The stacked lockup works in tall formats and signage. The compact mark compresses the brand into a "t" above a progress bar at 72%: always moving forward, never finished growing.</p></div>
+  <div class="grid g3">
+    <div class="tile white" style="align-items:flex-start">
+      <div class="stack" style="font-size:64px"><span class="bar"></span><span>ten</span><span>forty</span><span>five</span></div>
+      <span class="cap mono">Secondary: stacked lockup</span>
+    </div>
+    <div class="tile white" style="align-items:flex-start">
+      <div class="mark"><span>t</span></div>
+      <span class="cap mono">Compact mark / app icon / avatar</span>
+    </div>
+    <div class="tile white" style="align-items:flex-start">
+      <div><div class="wm" style="font-size:30px">ten forty five<span class="dot"></span></div><div class="s" style="font-size:22px;color:var(--steel);margin-top:10px">we sit next to you, not above you.</div></div>
+      <span class="cap mono">Tagline lockup: the italic voice</span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sh"><span class="n mono">03 / Light &amp; dark</span><h2>Midnight is home. White is the workspace.</h2><p>Approved pairings only. Each one clears WCAG AA at the wordmark's minimum size.</p></div>
+  <div class="grid g4">
+    <div class="tile white"><div class="wm" style="font-size:30px">ten forty five<span class="dot"></span></div><span class="cap mono">Midnight on white</span></div>
+    <div class="tile"><div class="wm" style="font-size:30px">ten forty five<span class="dot"></span></div><span class="cap mono">Midnight on cloud</span></div>
+    <div class="tile dark"><div class="wm inv" style="font-size:30px">ten forty five<span class="dot"></span></div><span class="cap mono">White on midnight</span></div>
+    <div class="tile steel"><div class="wm inv" style="font-size:30px">ten forty five<span class="dot" style="background:var(--midnight)"></span></div><span class="cap mono">White on steel</span></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sh"><span class="n mono">04 / Colour</span><h2>Cool, quiet, confident.</h2><p>A five-step steel scale. Midnight leads, steel accents, and the pale tints do the structural work. No secondary hues: emphasis comes from contrast and weight.</p></div>
+  <div class="grid swgrid">
+    <div class="sw" style="background:#142C3B;color:#fff"><b>Midnight</b><span>#142C3B<br>RGB 20 44 59<br>CMYK 88 63 42 52</span></div>
+    <div class="sw" style="background:#52788F;color:#fff"><b>Steel</b><span>#52788F<br>RGB 82 120 143</span></div>
+    <div class="sw" style="background:#A9BDC9"><b>Mist</b><span>#A9BDC9</span></div>
+    <div class="sw" style="background:#EDF2F5"><b>Cloud</b><span>#EDF2F5</span></div>
+    <div class="sw" style="background:#fff;border:1px solid #EDF2F5"><b>White</b><span>#FFFFFF</span></div>
+  </div>
+  <div class="ratio"><i style="flex:30;background:#142C3B"></i><i style="flex:10;background:#52788F"></i><i style="flex:5;background:#A9BDC9"></i><i style="flex:20;background:#EDF2F5"></i><i style="flex:35;background:#fff;border:1px solid #EDF2F5"></i></div>
+  <p class="cap mono">Usage ratio: 35 white · 30 midnight · 20 cloud · 10 steel · 5 mist</p>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sh"><span class="n mono">05 / Typography</span><h2>Typography is the hero. <span class="s" style="color:var(--steel)">With a second voice.</span></h2><p>Inter Tight for display and headlines, Inter for reading and IBM Plex Mono for labels. Instrument Serif Italic, borrowed from Direction B, is the accent: one phrase per layout, never a whole headline.</p></div>
+  <div class="type-spec">
+    <div class="tile white" style="min-height:420px">
+      <div class="specimen">Aa 45</div>
+      <div><h3 style="font-size:28px">Inter Tight</h3><p class="cap mono">Primary · 500 / 600 · tracking −2.5% to −4.5%</p></div>
+    </div>
+    <div class="scale">
+      <div><span class="mono" style="color:var(--steel)">Display</span><span style="font-family:var(--display);font-size:44px;font-weight:600;letter-spacing:-.04em;line-height:1">Grow on purpose.</span></div>
+      <div><span class="mono" style="color:var(--steel)">H2</span><span style="font-family:var(--display);font-size:26px;font-weight:600;letter-spacing:-.025em">We sit next to you, <span class="s" style="color:var(--steel)">not above you.</span></span></div>
+      <div><span class="mono" style="color:var(--steel)">Body</span><span>Inter Regular, 15/24. Written the way a sharp colleague talks: short sentences and no jargon.</span></div>
+      <div><span class="mono" style="color:var(--steel)">Accent</span><span class="s" style="font-size:30px;color:var(--steel)">Instrument Serif Italic, one phrase at a time.</span></div>
+      <div><span class="mono" style="color:var(--steel)">Label</span><span class="mono">IBM Plex Mono · 11px · +8%</span></div>
+      <div><span class="mono" style="color:var(--steel)">Figure</span><span style="font-family:var(--display);font-size:32px;font-weight:600;letter-spacing:-.04em">+38% <span style="color:var(--steel)">qualified leads</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sh"><span class="n mono">06 / Graphic elements</span><h2>Alignment, progress, <span class="s" style="color:var(--steel)">and a little personality.</span></h2><p>Three devices drawn from the grid: hairline column rules, progress bars that show momentum, and measuring ticks that frame key figures. The pull quote, borrowed from Direction B, carries client voices.</p></div>
+  <div class="grid g4">
+    <div class="pat pat-rules"><span class="mono" style="position:absolute;bottom:16px;left:16px;color:var(--midnight)">Column rules</span></div>
+    <div class="pat pat-progress">
+      <i style="width:92%"></i><i style="width:74%;background:var(--mist)"></i><i style="width:58%"></i><i style="width:36%;background:var(--mist)"></i>
+      <span class="mono" style="color:var(--mist);margin-top:12px">Progress bars</span>
+    </div>
+    <div class="pat pat-ticks">
+      <svg viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true">
+        <g stroke="#52788F" stroke-width="1">
+          <line x1="20" y1="130" x2="380" y2="130"/>
+          <g id="t"><line x1="20" y1="120" x2="20" y2="140"/><line x1="56" y1="125" x2="56" y2="135"/><line x1="92" y1="125" x2="92" y2="135"/><line x1="128" y1="125" x2="128" y2="135"/><line x1="164" y1="125" x2="164" y2="135"/><line x1="200" y1="114" x2="200" y2="146"/><line x1="236" y1="125" x2="236" y2="135"/><line x1="272" y1="125" x2="272" y2="135"/><line x1="308" y1="125" x2="308" y2="135"/><line x1="344" y1="125" x2="344" y2="135"/><line x1="380" y1="120" x2="380" y2="140"/></g>
+        </g>
+        <rect x="196" y="76" width="8" height="8" fill="#142C3B"/>
+      </svg>
+      <span class="mono" style="position:absolute;bottom:16px;left:16px;color:var(--midnight)">Measuring ticks</span>
+    </div>
+    <div class="pat" style="background:#fff;border:1px solid var(--cloud);padding:28px;display:flex;flex-direction:column;justify-content:space-between"><div class="s" style="font-size:120px;line-height:.6;color:var(--steel);height:56px">“</div><p class="s" style="font-size:24px;line-height:1.15">They felt like part of our team from week one.</p><span class="mono" style="color:var(--midnight)">Pull quote</span></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sh"><span class="n mono">07 / Photography &amp; art direction</span><h2>Real rooms, real work, natural light.</h2><p>Documentary over staged. Owners at their own counters, teams around real tables, hands on actual work. Cool white balance, lifted shadows, generous negative space for type. No handshakes, no glowing screens.</p></div>
+  <div class="grid g4">
+    <div class="ph"><div class="scene" style="background:linear-gradient(180deg,#d7e1e7 0 55%,#a9bdc9 55% 100%)"><div style="position:absolute;left:18%;bottom:30%;width:34%;height:42%;background:#52788F"></div><div style="position:absolute;right:16%;bottom:45%;width:18%;height:18%;background:#EDF2F5"></div></div><div class="lbl"><span class="mono">At the counter</span><br><small>Owner-operator, mid-task, shot at eye level</small></div></div>
+    <div class="ph"><div class="scene" style="background:#142C3B"><div style="position:absolute;inset:18% 12% 30%;border:1px solid #52788F"></div><div style="position:absolute;left:12%;right:12%;bottom:30%;height:12%;background:#52788F"></div></div><div class="lbl"><span class="mono">The working session</span><br><small>Overhead table, notes, laptops half-closed</small></div></div>
+    <div class="ph"><div class="scene" style="background:linear-gradient(90deg,#EDF2F5 0 62%,#A9BDC9 62%)"><div style="position:absolute;left:10%;top:22%;width:40%;height:56%;background:#52788F;opacity:.75"></div></div><div class="lbl" style="color:var(--midnight)"><span class="mono">Negative space</span><br><small>Subject off-centre, one-third left for type</small></div></div>
+    <div class="ph"><div class="scene" style="background:#52788F"><div style="position:absolute;left:0;right:0;top:40%;height:1px;background:#A9BDC9"></div><div style="position:absolute;left:30%;top:20%;width:40%;height:40%;background:#142C3B"></div></div><div class="lbl"><span class="mono">Architectural detail</span><br><small>Structure, light and shadow as texture</small></div></div>
+  </div>
+  <p class="cap mono" style="margin-top:20px">Grade: cool highlights, neutral mids, never warmer than 5200K. Tonal studies shown, not final imagery.</p>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sh"><span class="n mono">08 / Business cards</span><h2>Built to be handed over.</h2><p>85 × 55 mm, 600gsm uncoated with a midnight core. The front carries only the brand; the back carries the person.</p></div>
+  <div class="cardstage">
+    <div class="bcard f"><div class="wm inv" style="font-size:26px">ten forty five<span class="dot"></span></div><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="mono" style="color:var(--mist)">We sit next to you,<br>not above you.</span><span style="display:block;width:64px;height:4px;background:var(--steel)"></span></div></div>
+    <div class="bcard b"><div><div style="font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.025em">Jordan Avery</div><div class="mono" style="color:var(--steel);margin-top:4px">Growth Partner</div></div><div class="mono" style="font-size:10px;line-height:1.7;color:var(--midnight)">jordan@tenfortyfive.co<br>+1 (555) 010 1045<br>tenfortyfive.co</div></div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sh"><span class="n mono">09 / Instagram carousel</span><h2>Teach one thing, clearly.</h2><p>A five-slide educational format: hook, steps, summary. Covers are statement-led, an idea from Direction B: an oversized headline with one italic phrase, and no stock imagery.</p></div>
+  <div class="grid g4">
+    <div class="ig" style="background:var(--midnight);color:#fff"><div class="pager"><i class="on"></i><i></i><i></i><i></i><i></i></div><h3 style="font-size:38px;line-height:.98">3 numbers to check <span class="s" style="color:var(--mist)">every Monday.</span></h3><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="mono" style="color:var(--mist)">Swipe →</span><span class="wm inv" style="font-size:14px">ten forty five<span class="dot"></span></span></div></div>
+    <div class="ig" style="background:var(--cloud)"><div class="pager"><i></i><i class="on"></i><i></i><i></i><i></i></div><div><span class="mono" style="color:var(--steel)">01 / Cost per lead</span><h3 style="margin-top:12px">What you pay to start a conversation.</h3></div><div style="height:6px;background:var(--steel);width:64%"></div></div>
+    <div class="ig" style="background:#fff;border:1px solid var(--cloud)"><div class="pager"><i></i><i></i><i class="on"></i><i></i><i></i></div><div><span class="mono" style="color:var(--steel)">02 / Lead-to-call rate</span><h3 style="margin-top:12px">How many of those talk to you.</h3></div><div style="font-family:var(--display);font-size:64px;font-weight:600;letter-spacing:-.05em;line-height:1">24%</div></div>
+    <div class="ig" style="background:var(--steel);color:#fff"><div class="pager"><i></i><i></i><i></i><i></i><i class="on"></i></div><h3 style="font-size:34px">Track them for a month. <span class="s">Then we'll talk.</span></h3><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="mono">Save this post</span><span class="wm inv" style="font-size:14px">ten forty five<span class="dot" style="background:var(--midnight)"></span></span></div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="sh"><span class="n mono">10 / LinkedIn templates</span><h2>Point of view, not promotion.</h2><p>Two formats: an insight card for opinion posts and a data card for client results. Both lead with typography and leave the feed's noise behind.</p></div>
+  <div class="grid g2">
+    <div class="li"><div class="hd"><div class="av">t</div><div><b>ten forty five</b><br><span style="color:#666;font-size:12px">Business growth partner · 2h</span></div></div><div class="body">Most marketing problems are business problems in disguise. Here's how we find the real one in the first meeting. ↓</div>
+      <div class="img" style="background:var(--midnight);color:#fff"><span class="mono" style="color:var(--mist)">Point of view</span><h3 style="font-size:34px">Fix the funnel <span class="s" style="color:var(--mist)">before</span><br>you fund the ads.</h3><div style="display:flex;justify-content:space-between;align-items:center"><span style="width:120px;height:4px;background:var(--steel)"></span><span class="wm inv" style="font-size:14px">ten forty five<span class="dot"></span></span></div></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Share</div></div>
+    <div class="li"><div class="hd"><div class="av">t</div><div><b>ten forty five</b><br><span style="color:#666;font-size:12px">Business growth partner · 1d</span></div></div><div class="body">Six months with a regional HVAC business. We changed three things, and none of them was the logo.</div>
+      <div class="img" style="background:var(--cloud)"><span class="mono" style="color:var(--steel)">Client result · Home services</span><div style="display:flex;gap:40px;align-items:flex-end"><div><div style="font-family:var(--display);font-size:56px;font-weight:600;letter-spacing:-.05em;line-height:1">−41%</div><span class="mono" style="color:var(--steel)">Cost per lead</span></div><div><div style="font-family:var(--display);font-size:56px;font-weight:600;letter-spacing:-.05em;line-height:1">2.3×</div><span class="mono" style="color:var(--steel)">Booked calls</span></div></div><span class="wm" style="font-size:14px">ten forty five<span class="dot"></span></span></div>
+      <div class="ft">👍 Like · 💬 Comment · ↗ Share</div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="sh"><span class="n mono">11 / Digital advertising</span><h2>Quiet ads that get noticed.</h2><p>In a loud feed, calm stands out. Each ad has one headline, one proof point and one action, set on the 12-column grid.</p></div>
+  <div class="ads">
+    <div class="ad" style="width:300px;height:250px;background:var(--midnight);color:#fff"><span class="wm inv" style="font-size:14px">ten forty five<span class="dot"></span></span><h3 style="font-size:26px">Marketing that works like <span class="s" style="color:var(--mist)">your own team.</span></h3><span class="btn light">Book a growth call</span></div>
+    <div class="ad" style="height:250px;background:var(--cloud);flex-direction:row;align-items:center;gap:32px"><div style="flex:1"><span class="mono" style="color:var(--steel)">For growing businesses</span><h3 style="font-size:36px;margin-top:10px">Spending more on ads<br>but not getting more leads?</h3></div><div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start"><span class="btn">Get a free audit</span><span class="wm" style="font-size:14px">ten forty five<span class="dot"></span></span></div></div>
+    <div class="ad" style="width:200px;height:356px;background:var(--steel);color:#fff"><span class="mono">Story · 9:16</span><h3 style="font-size:28px">Your marketing,<br><span class="s">minus the guesswork.</span></h3><div><div style="height:4px;background:#fff;width:70%;margin-bottom:16px"></div><span class="wm inv" style="font-size:13px">ten forty five<span class="dot" style="background:var(--midnight)"></span></span></div></div>
+  </div>
+  <p class="cap mono" style="margin-top:16px">Shown: 300×250 MPU · flexible leaderboard / LinkedIn sponsored · 9:16 story</p>
+</section>
+
+<!-- 12 / 13 -->
+<section>
+  <div class="sh"><span class="n mono">12–13 / Proposal &amp; workbook</span><h2>Documents worth keeping.</h2><p>The proposal reads like board papers: confident, spare, tailored to the client. The workbook is friendlier, with the same grid in a lighter register for first-time marketers.</p></div>
+  <div class="covers">
+    <div class="doc" style="background:var(--midnight);color:#fff">
+      <div style="display:flex;justify-content:space-between"><span class="wm inv" style="font-size:16px">ten forty five<span class="dot"></span></span><span class="mono" style="color:var(--mist)">Proposal · Confidential</span></div>
+      <div><span class="mono" style="color:var(--mist)">Prepared for Northfield Dental Group</span><h2 style="font-size:44px;margin-top:16px">Growth plan<br><span class="s" style="color:var(--mist)">for</span> 2027</h2><div class="ruler" style="margin-top:32px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="mono" style="color:var(--mist);display:flex;justify-content:space-between"><span>Strategy · Systems · Execution</span><span>v1.0 · Dec 2026</span></div>
+    </div>
+    <div class="doc" style="background:#fff">
+      <div style="display:flex;justify-content:space-between"><span class="wm" style="font-size:16px">ten forty five<span class="dot"></span></span><span class="mono" style="color:var(--steel)">Workbook 01</span></div>
+      <div><div style="display:flex;flex-direction:column;gap:8px;margin-bottom:40px"><i style="height:8px;background:var(--midnight);width:90%"></i><i style="height:8px;background:var(--steel);width:65%"></i><i style="height:8px;background:var(--mist);width:40%"></i></div><h2 style="font-size:40px">The <span class="s" style="color:var(--steel)">one-page</span><br>marketing plan.</h2><p style="color:var(--muted);margin-top:16px">A 45-minute workbook for owners who'd rather be running their business.</p></div>
+      <div class="mono" style="color:var(--steel)">Free download · tenfortyfive.co/workbook</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section>
+  <div class="sh"><span class="n mono">14 / Website hero</span><h2>The first meeting, online.</h2><p>Lead with the philosophy, prove it with numbers, and give one clear way to start the conversation.</p></div>
+  <div class="browser">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">tenfortyfive.co</span></div>
+    <div class="site">
+      <nav><span class="wm" style="font-size:20px">ten forty five<span class="dot"></span></span><ul><li>Services</li><li>Approach</li><li>Work</li><li>Resources</li></ul><span class="btn" style="background:var(--midnight)">Book a call</span></nav>
+      <div class="h">
+        <span class="mono" style="grid-column:1/-1;color:var(--steel)">Business growth partner</span>
+        <h1>We sit next to you,<br><em>not above you.</em></h1>
+        <p>Marketing strategy, digital experiences and automation, delivered like an in-house team that already understands your business.</p>
+        <div class="cta"><span class="btn" style="background:var(--midnight);padding:14px 22px">Start with a growth call</span><span class="btn" style="background:transparent;color:var(--midnight);border:1px solid var(--midnight);padding:13px 22px">Free resources</span></div>
+      </div>
+      <div class="stats">
+        <div><b>45 min</b><span class="mono" style="color:var(--steel)">First strategy session</span></div>
+        <div><b>3.1×</b><span class="mono" style="color:var(--steel)">Avg. lead growth</span></div>
+        <div><b>−32%</b><span class="mono" style="color:var(--steel)">Wasted ad spend</span></div>
+        <div><b>1 team</b><span class="mono" style="color:var(--steel)">Yours, extended</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section style="border:0">
+  <div class="sh"><span class="n mono">15 / Usage guidelines</span><h2>Keep it calm. Keep it aligned.</h2><p>The identity works because of what it leaves out. These rules protect that.</p></div>
+  <div class="grid g2" style="gap:48px">
+    <ul class="rules">
+      <li><span class="mono" style="color:var(--steel)">01</span>The wordmark is always lowercase and always set as one line, except in the stacked lockup.</li>
+      <li><span class="mono" style="color:var(--steel)">02</span>Align everything to the 12-column grid. If it floats, it's wrong.</li>
+      <li><span class="mono" style="color:var(--steel)">03</span>One headline, one proof point, one action per layout.</li>
+      <li><span class="mono" style="color:var(--steel)">04</span>Steel is an accent: never more than 10% of a layout.</li>
+      <li><span class="mono" style="color:var(--steel)">05</span>Voice: say it like a smart colleague would, plainly and with a little wit.</li>
+      <li><span class="mono" style="color:var(--steel)">06</span>Use the serif italic once per layout, for a phrase rather than a whole headline. Never use it in the wordmark.</li>
+    </ul>
+    <div class="grid g2">
+      <div class="dd"><span class="x mono" style="color:var(--steel)">✓ Do</span><span class="wm" style="font-size:22px">ten forty five<span class="dot"></span></span></div>
+      <div class="dd"><span class="x mono" style="color:#9b4a4a">✕ Capitalise</span><span class="wm" style="font-size:22px;opacity:.5">Ten Forty Five</span></div>
+      <div class="dd"><span class="x mono" style="color:#9b4a4a">✕ Gradient</span><span class="wm" style="font-size:22px;background:linear-gradient(90deg,#52788F,#8ec5ff);-webkit-background-clip:text;color:transparent;opacity:.6">ten forty five</span></div>
+      <div class="dd"><span class="x mono" style="color:#9b4a4a">✕ Stretch / rotate</span><span class="wm" style="font-size:22px;transform:scaleX(1.4) rotate(-6deg);opacity:.5">ten forty five</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px"><span class="wm inv" style="font-size:20px">ten forty five<span class="dot"></span></span><span class="mono">Approved brand identity · v1.0 · November 2026</span></div></footer>
+</body>
+</html>

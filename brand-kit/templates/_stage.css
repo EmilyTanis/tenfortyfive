@@ -1,0 +1,7 @@
+/* Presentation wrapper for templates. Each .canvas is the real output size; screenshot or print the canvas itself. */
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#DDE4E9;font-family:var(--tff-font-body);color:var(--tff-text);padding:40px;display:flex;flex-direction:column;gap:48px;align-items:flex-start}
+.spec{font-family:var(--tff-font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tff-steel);margin-bottom:12px}
+.row{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.canvas{position:relative;overflow:hidden;flex:none}
+.canvas img.logo{display:block}
