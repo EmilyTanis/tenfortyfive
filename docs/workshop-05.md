@@ -8,7 +8,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 02 | Sitemap and navigation | Approved |
 | 03 | Homepage structure | Approved |
 | 04 | Pricing page | Approved |
-| 05 | Buying get started. / think bigger. | Open |
+| 05 | Buying get started. / think bigger. | Approved |
 | 06 | do it yourself. purchase and delivery | Open |
 | 07 | Onboarding after payment | Open |
 | 08 | Portfolio at launch | Open |
@@ -95,3 +95,16 @@ Packages are defined by **the size of the goal and how deep we go**, not by a li
 - Internal check: think bigger.'s planning step (~2–3h) and check-in (~1h) fit inside the 20–25 hour budget but tighten it. Hour budgets stay internal and are reviewed with pricing after five paid projects.
 
 **Follow-up for `brand/messaging.md`:** add the planning step and 30-day check-in to think bigger. and the "one problem / bigger goal" definitions. Existing package descriptions are compatible.
+
+## 05: Buying get started. / think bigger. (approved)
+
+**Tell us, then pay.** No call required, but no instant checkout for fixed projects either.
+
+1. Visitor clicks *Start a get started. project* (or think bigger.) on the Pricing page.
+2. Short form, four questions: business and website; the problem to solve or goal to reach; timing or existing tools; name and email.
+3. Within one business day we email the confirmed scope, timeline and a payment link.
+4. Work starts when the first 50% is paid; the second 50% is due before handoff.
+
+The free-call path ends the same way: after the call, the same email with confirmed scope, timeline and payment link. One process for both.
+
+**Changes an earlier decision:** Workshops 02 and 04 approved "direct checkout" for fixed packages. This replaces it with "tell us, then pay", because package deliverables are now agreed with the client up front and paying first would mean refunds when a project doesn't fit. Update `brand/messaging.md` and `website/copy-brief.md` to match.
