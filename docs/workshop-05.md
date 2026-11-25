@@ -12,7 +12,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 06 | do it yourself. purchase and delivery | Approved |
 | 07 | Onboarding after payment | Approved |
 | 08 | Portfolio at launch | Approved |
-| 09 | Platform and hosting | Open |
+| 09 | Platform and hosting | Approved |
 | 10 | Soft-launch scope | Open |
 
 ## 01: Website's main job (approved)
@@ -116,7 +116,7 @@ No scope to confirm, so **instant checkout**.
 1. **Format: guide plus usable templates.** Each product is a branded plain-language PDF guide plus 2–4 ready-to-use templates (Google Docs/Sheets or Canva links the buyer copies into their own account).
 2. **Checkout:** Buy → pay → immediate download page, plus an email with the link. Only email and payment details are asked for.
 3. **Apple Pay and Google Pay are required** at checkout; most early traffic is on phones from social and LinkedIn. Express (one-tap) Apple Pay on our own domain needs domain verification, so it depends on buying the domain.
-4. **Sales tax:** prefer a checkout service that acts as merchant of record (e.g. Paddle, Lemon Squeezy, Gumroad) and collects and remits sales tax; New Jersey generally taxes digital products. Confirm the tax treatment with an accountant. Service chosen in decision 09.
+4. **Sales tax:** handled through Stripe (see decision 09). Confirm the tax treatment with an accountant before products go on sale.
 5. **Email updates:** an unticked "Send me occasional tips and updates" box at checkout. Never pre-ticked, never required.
 6. **Refunds:** "If it's not useful, email us within 14 days for a full refund."
 7. **Next step inside each product:** a link to start a get started. project. No discount or upgrade credit (consistent with Workshop 02).
@@ -148,3 +148,20 @@ Goal: a client never wonders what's happening.
 The business owner and everyone involved have agreed to the project being documented.
 
 Timeline impact: the landscaping site must be built in December to appear by the January 5 public launch; planned in decision 10.
+
+## 09: Platform and hosting (approved)
+
+**Our own website is built in code from this repository** (Claude Code, using the brand kit's tokens and Tailwind preset) and published from GitHub by a static host such as Cloudflare Pages or Netlify. Changes go through pull requests. Client websites remain platform-agnostic.
+
+| Job | Tool |
+|---|---|
+| Booking calls | Cal.com or Calendly (free plan) |
+| Forms (project start, booking) | Host's built-in forms or Formspree (free plan) |
+| Customer list | HubSpot free |
+| **All payments** | **Stripe**: payment links for do it yourself. products (redirect to a download page; link also in the receipt) and for project payments (50/50). Apple Pay and Google Pay enabled |
+| Sales tax | Stripe Tax (~0.5% per transaction where registered) calculates and collects; returns filed by us/our accountant or a Stripe filing partner |
+| Domain | Any registrar (~$20/yr) — **urgent**: needed for the site, email, booking and Apple Pay domain verification |
+
+Why Stripe for both rather than a merchant-of-record service: one account, dashboard and payout; lower fees (about 2.9% + 30¢ plus 0.5% tax vs about 5% + 50¢); New Jersey registration is likely needed anyway as an NJ business. Other states' thresholds (commonly $100k or 200 sales a year) are unlikely to apply at launch volumes.
+
+**Before anything goes on sale, ask the accountant:** (1) are the guides/templates taxable "specified digital products" in NJ (6.625%)? (2) are project fees taxable services? (3) registration and filing frequency.
