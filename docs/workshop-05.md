@@ -11,7 +11,7 @@ In progress, started November 25, 2026. Builds on [Workshop 04](workshop-04.md),
 | 05 | Buying get started. / think bigger. | Approved |
 | 06 | do it yourself. purchase and delivery | Approved |
 | 07 | Onboarding after payment | Approved |
-| 08 | Portfolio at launch | Open |
+| 08 | Portfolio at launch | Approved |
 | 09 | Platform and hosting | Open |
 | 10 | Soft-launch scope | Open |
 
@@ -138,3 +138,13 @@ Goal: a client never wonders what's happening.
 | After launch | Support window (7 or 30 days); think bigger. adds the 30-day check-in. Ask for feedback and permission to show the work |
 
 **Changes an earlier decision:** Workshop 02's delivery guidelines specified weekly updates; check-in frequency is now the client's choice.
+
+## 08: Portfolio at launch (approved)
+
+1. **The landscaping business website is the first real project**, run exactly like a paid get started.: four-question form, confirmation email, kickoff, shared folder, handoff, and an hours log. It produces a portfolio piece, tests onboarding before a paying client, and validates the 10–15 hour get started. budget.
+2. **Shown on the homepage as "Recent work" once live:** problem, what we built, result. Results reported only after measurement against a baseline (e.g. quote requests in the first month). Not described as a paid client. No mention of the family connection (keeps founders private, per Workshop 04).
+3. **No concept projects at launch.** May return later, clearly labeled, to show a strength real work doesn't yet cover.
+
+The business owner and everyone involved have agreed to the project being documented.
+
+Timeline impact: the landscaping site must be built in December to appear by the January 5 public launch; planned in decision 10.
