@@ -34,5 +34,5 @@ Exact deliverables and timelines are still being validated. See [`brand/messagin
 ## Working in this repo
 
 - AI agents follow [`CLAUDE.md`](CLAUDE.md) / [`AGENTS.md`](AGENTS.md).
-- Work on a branch and open a pull request; nothing merges or deploys without founder approval.
+- Documents and decisions are committed straight to `main`; website code goes through a branch and preview. Nothing deploys without founder approval.
 - Never commit prospect or client personal data, credentials or secrets.
